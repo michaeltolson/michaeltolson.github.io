@@ -1,0 +1,829 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper docs-doc-page docs-version-current plugin-docs plugin-id-default docs-doc-id-POS and Store/htg_receipts">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v2.4.0">
+<title data-rh="true">Creating and Customising Receipts | My Site</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://michaeltolson.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://michaeltolson.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://michaeltolson.github.io/docs/POS and Store/htg_receipts"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Creating and Customising Receipts | My Site"><meta data-rh="true" name="description" content="The purpose of this guide is to show how to configure Receipts to allow"><meta data-rh="true" property="og:description" content="The purpose of this guide is to show how to configure Receipts to allow"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://michaeltolson.github.io/docs/POS and Store/htg_receipts"><link data-rh="true" rel="alternate" href="https://michaeltolson.github.io/docs/POS and Store/htg_receipts" hreflang="en"><link data-rh="true" rel="alternate" href="https://michaeltolson.github.io/docs/POS and Store/htg_receipts" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="My Site RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="My Site Atom Feed"><link rel="stylesheet" href="/assets/css/styles.6d611281.css">
+<link rel="preload" href="/assets/js/runtime~main.d11f947e.js" as="script">
+<link rel="preload" href="/assets/js/main.19ab6258.js" as="script">
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){var t=null;try{t=new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}return t}()||function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();t(null!==e?e:"light")}()</script><div id="__docusaurus">
+<div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="My Site Logo" class="themedImage_ToTc themedImage--light_HNdA"><img src="/img/logo.svg" alt="My Site Logo" class="themedImage_ToTc themedImage--dark_i4oU"></div><b class="navbar__title text--truncate">My Site</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/intro">How-to Guides</a></div><div class="navbar__items navbar__items--right"><div class="searchBox_ZlJk"></div><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0 docsWrapper_BCFX"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docPage__5DB"><aside class="theme-doc-sidebar-container docSidebarContainer_b6E3"><div class="sidebarViewport_Xe31"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/intro">Introduction</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/docs/Configuration Basics/Estate Manager Navigation">Configuration Basics</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/docs/Central Setup and Operations/Alerts and Monitoring">Central Setup and Operations</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" aria-expanded="true" href="/docs/POS and Store/POS Behaviour- Menus">POS and Store</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/POS and Store/POS Behaviour- Menus">POS Behaviour- Menus</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/POS and Store/POS Order Capture">POS Order Capture</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/POS and Store/POS Styles and Themes">POS Styles and Themes</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/POS and Store/Store Inventory Management">Store Inventory Management</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/POS and Store/htg_comm_scr">Configuring Customer Communication Scripts</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/POS and Store/htg_discounts">Configuring Discount Reasons</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/POS and Store/htg_emp_sale">Configuring Employee Sales</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/POS and Store/htg_receipts">Creating and Customising Receipts</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/POS and Store/htg_returns">Configuring Return Reasons</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/POS and Store/htg_store">Configuring a New Store</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/POS and Store/htg_tender">Configuring Tender Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/POS and Store/htg_user_role">Configuring Users, User Templates and Roles</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/POS and Store/htg_voids">Configuring Voids</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/docs/Cash Management/htg_cash_empty">Cash Management</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/docs/Promotions, Loyalty and Vouchers/htg_coupons">Promotions, Loyalty and Vouchers</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/docs/Fiscal/htg_german">Fiscal</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/docs/Hospitality/htg_hosp_kprint">Hospitality</a></div></li></ul></nav></div></div></aside><main class="docMainContainer_gTbr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">POS and Store</span><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Creating and Customising Receipts</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><h1>Creating and Customising Receipts</h1><p>#Introduction</p><p>The purpose of this guide is to show how to configure Receipts to allow
+you to set up and customise a variety of Receipts to meet your
+organisations&#x27; needs. This guide introduces all the basics in
+understanding the Receipt Maintenance and the various terminologies that
+are associated with it, and then walks through on the different
+customisations that can be made to the receipts that are available for
+customisation in the Receipt Maintenance.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview">​</a></h2><p>This guide will cover the configuration for the following:</p><ul><li><p>Receipts Configuration -- Provides all the basics required in
+understanding the Receipt Maintenance, its terminologies and how a
+basic customisation can be done to a Receipt and printed in a
+physical printer.</p></li><li><p>Customisations to Receipts -- Provides a step-by-step guide on the
+various range of customisations that can be made to the different
+Receipts that are available for customisation in the Receipt
+Maintenance.</p></li></ul><h1>Receipts Configuration</h1><p>This section covers all the basics that are required to understand the
+Receipt Maintenance and start making receipt customisations. The areas
+that are covered in this section are accessing the receipt maintenance,
+creating a new receipt, getting started with the new receipt by making a
+basic customisation to it and finally understanding the various
+terminologies of the Receipt Maintenance.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="accessing-receipt-maintenance">Accessing Receipt Maintenance<a href="#accessing-receipt-maintenance" class="hash-link" aria-label="Direct link to Accessing Receipt Maintenance" title="Direct link to Accessing Receipt Maintenance">​</a></h2><p>If a user needs to access Receipt Maintenance, they will need the
+appropriate privileges for their user account. However, Receipt
+Maintenance has a larger number of privileges than other maintenance
+applications, so it is important to ensure that the correct privileges
+have been enabled for your users.</p><p>To enable these privileges, follow the steps below:</p><p>Navigate to User Role Maintenance using the Search or the path</p><p><img loading="lazy" src="/assets/images/image1-ca6cd0c14396376c9a207a4c76027bf7.jpg" width="671" height="193" class="img_ev3q"> </p><p>In the User Role Maintenance, select the <strong>Edit icon of the User</strong> that
+you wish to enable the privilege for.</p><p>Navigate to the <strong>Authorised Functions tab</strong> of that selected User and
+change the filter of the Application Package as <strong>Receipt Maintenance</strong>
+as follows:\
+<img loading="lazy" src="/assets/images/image2-74ee8388fc3f40b7a7bcb50adf4c3e03.jpeg" width="1101" height="433" class="img_ev3q"> </p><p>This would list out all the privileges that are needed in order to be
+able to access all the Standard Receipts functions as follows:</p><table><thead><tr><th>Package</th><th>Process</th><th>Function ID</th><th>Function Name</th></tr></thead><tbody><tr><td>Receipt Maintenance</td><td>Receipt Maintenance</td><td>enactor.receiptMaintenance.View</td><td>View</td></tr><tr><td>Receipt Maintenance</td><td>Receipt Maintenance</td><td>enactor.receiptMaintenance.Run</td><td>Run</td></tr><tr><td>Receipt Maintenance</td><td>Receipt Maintenance</td><td>enactor.receiptMaintenance.Edit</td><td>Edit</td></tr><tr><td>Receipt Maintenance</td><td>Receipt Maintenance</td><td>enactor.receiptMaintenance.New</td><td>New</td></tr><tr><td>Receipt Maintenance</td><td>Receipt Maintenance</td><td>enactor.receiptMaintenance.Remove</td><td>Remove</td></tr><tr><td>Receipt Maintenance</td><td>Receipt Maintenance</td><td>enactor.receiptMaintenance.List</td><td>List</td></tr><tr><td>Receipt Maintenance</td><td>Receipt Maintenance</td><td>enactor.receiptMaintenance.Export</td><td>Export</td></tr><tr><td>Receipt Maintenance</td><td>Receipt Maintenance</td><td>enactor.pageDefinitionDetailMaintenance.Remove</td><td>Remove</td></tr></tbody></table><p>Make sure that your User has the required privileges enabled by ticking
+on the necessary functions that are listed or if you want to enable all
+privileges, just click on <strong>Enable All Displayed Functions</strong> and click
+on <strong>Save</strong>.</p><p>For these changes to apply, sign out and back into the Estate Manager.</p><p>Now you will be able to access the Receipt Maintenance and carry out all
+Receipt related functions.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="create-a-new-receipt">Create a new Receipt<a href="#create-a-new-receipt" class="hash-link" aria-label="Direct link to Create a new Receipt" title="Direct link to Create a new Receipt">​</a></h2><p>The Receipt Maintenance is used to create new Receipts. To create a new
+Receipt follow the steps below:</p><p>Navigate to Receipt Maintenance using the Search or the path</p><p><img loading="lazy" src="/assets/images/image3-d56bca4ce9139942613e1cd2e1d4ce55.jpg" width="545" height="155" class="img_ev3q"></p><p>Select <strong>New Receipt Document</strong> on the Receipt Maintenance page.</p><p><img loading="lazy" src="/assets/images/image4-78db63641daef6cf66ebf6904ddde5f5.jpeg" width="1466" height="679" class="img_ev3q"> </p><p>This will open the <strong>New Receipt</strong> screen where the following 3 fields
+must be defined for this new Receipt:</p><table><thead><tr><th>Configuration</th><th>Description</th></tr></thead><tbody><tr><td>Type</td><td>Select the Receipt Type from the Type drop-down.<br><br>This is the page definition type that the custom receipt will be linked to. This is necessary for the custom receipt to be discoverable by other maintenance applications.</td></tr><tr><td>Receipt Document ID</td><td>Enter a unique Receipt Document ID for the new Receipt.<br><br>This is the unique id of the receipt. It will be used as part of the generated filename for the custom receipt. It will also be used as part of the page definition detail automatically generated for the custom  receipt. The ID can be alphanumeric and contain a maximum of 20 characters and will be used to uniquely identify this new Receipt. Use of a systematic and business-specific naming convention is recommended here.</td></tr><tr><td>Original Receipt Document</td><td>Select an Original Receipt Document from the Original Receipt Document drop-down.<br><br>This is a drop-down of the available system receipts. This is automatically restricted based Type that was selected above. The values displayed are the filenames of the receipts. The file name of the selected system receipt will be used for generating the filename of your custom receipt.<br><br>The Original Receipt Document selected here will decide the width of the custom receipt that is you are going to create, since this will inherit its layout from the selected system receipt, as well as any future changes to that system receipt.</td></tr></tbody></table><p>We will create a new Receipt with the Type <strong>Standard Receipt</strong> and the
+Original Receipt Document as <strong>StandardReceiptTemplate44</strong>, which would
+give us a 44-columns width Receipt as follows:</p><p><img loading="lazy" src="/assets/images/image5-2f78e12a4d606838f3df025ee2736d0e.jpg" width="623" height="257" class="img_ev3q"> </p><p><strong>Note:</strong> The create button will not appear until a type has been
+selected. Also note that, if system receipts under the Original Receipt
+Document dropdown are not available for the Type that is selected, then
+you will not be able to create a custom receipt in Receipt Maintenance.</p><p>Once <strong>Create</strong> is clicked, you will be navigated to the Edit Receipt
+page for your new Receipt. This receipt will match the layout for the
+system receipt and therefore look identical until customisations are
+made. In order to use the new custom receipt, you will need to enter a
+name. The input for this field is presented in the initial view of the
+receipt.</p><p><img loading="lazy" src="/assets/images/image6-f329a856812d2f97a704c5ecc33f8778.jpg" width="1129" height="561" class="img_ev3q"> </p><p><strong>Note:</strong> It is recommended that you save the receipt once you have
+entered a name. It is easier to back out of changes if you can simply
+exit the page. By saving now, you avoid having to recreate the receipt
+while making the initial changes.</p><p>The Edit Receipt Maintenance, for the newly created Receipt, is
+presented with the 2 key tabs namely; <strong>Receipt Sections and Receipt
+Columns</strong>.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="edit-receipt----receipt-sections">Edit Receipt -- Receipt Sections<a href="#edit-receipt----receipt-sections" class="hash-link" aria-label="Direct link to Edit Receipt -- Receipt Sections" title="Direct link to Edit Receipt -- Receipt Sections">​</a></h3><p>The <strong>Receipt Sections</strong> Tab contains the list of each section that the
+Receipt consists of. Eg: Receipt Header Section, Receipt Body Section,
+Receipt Footer Section.</p><p>Using this, customisations can be made separately for each section of
+the Receipt.</p><p>This tab is also where the preview of the Receipt can be set up and
+viewed.</p><p>Customisations to Receipt Sections and Previewing of the Receipt will be
+further explained later in this guide.</p><p><img loading="lazy" src="/assets/images/image7-f32153098972ac3b8cd60fc4182dfe1c.jpg" width="1153" height="561" class="img_ev3q"> </p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="edit-receipt----receipt-columns">Edit Receipt -- Receipt Columns<a href="#edit-receipt----receipt-columns" class="hash-link" aria-label="Direct link to Edit Receipt -- Receipt Columns" title="Direct link to Edit Receipt -- Receipt Columns">​</a></h3><p>The <strong>Receipt Columns</strong> Tab contains the list of all configured columns
+that the Receipt can make use of in each of its sections.</p><p>Eg: Address Details, Item Detail, Amount, Item Value.</p><p><img loading="lazy" src="/assets/images/image8-19b6fa8350af7d630e9b626ccddb143c.jpeg" width="1462" height="681" class="img_ev3q"> </p><p>Each of these columns can be edited by clicking on the edit sign. New
+columns can also be created by clicking on <strong>Create</strong> at the end of this
+table.</p><p>Customisations to Receipt Columns will be further explained later in
+this guide.</p><p><strong>Getting Started with Receipts</strong></p><p>This section allows you to get started with making proper use of the
+Receipts Maintenance and covers the basics on:</p><ul><li><p>How a customisation can be made to a new Receipt.</p></li><li><p>Previewing the customised Receipt in the Receipt Maintenance.</p></li><li><p>Getting the customised Receipt printed using a physical printer in
+the POS.</p></li></ul><p>To make the customisations, we will use the Enactor Standard Receipt 44,
+which is the following 44-column Standard Receipt that was created in
+the previous section:</p><p><img loading="lazy" src="/assets/images/image9-c94c889596223dfafdc2468e65beb78f.jpg" width="328" height="324" class="img_ev3q"></p><p>The customisation is to hide the currency symbols of each merchandise
+item in the receipt that is printed.</p><p>Making the First Customisation</p><p>Receipts display the currency symbols of the item values by default. To
+hide the currency symbols, we should first navigate to the exact element
+that displays the currency symbol for the item value in the Receipt.</p><p>First, navigate to the Receipt Maintenance and click on the <strong>Edit icon
+of the Receipt</strong> that was created.</p><p>In the Edit Receipt page, we need to make the customisation to the
+Receipt Body Section, hence click on the <strong>Edit icon of the Receipt Body
+Section</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image10-6709ff9e95281e41173daba7d208cf8d.jpg" width="1162" height="562" class="img_ev3q"> </p><p>This would list down the Elements used in this Receipt Body Section.
+From this section, we need to navigate to the Element which displays the
+current item value of the Receipt. Following is the path where this
+element exists:\
+Basket Items List <!-- -->&gt;<!-- --> Merchandise Item <!-- -->&gt;<!-- --> Merchandise Standard Item
+Details <!-- -->&gt;<!-- --> Value</p><p><img loading="lazy" src="/assets/images/image11-99799ba13f5df1d93651ad7d36870ee3.jpeg" width="1463" height="494" class="img_ev3q"> </p><p>It can be noticed that there is an element called Item Value here, which
+is what displays the value of each item in the Receipt, which also
+includes the currency symbol.</p><p>First, we need to isolate the currency symbol and item value as 2
+elements.</p><p>1 -- <strong>Disable the current &quot;Item Value&quot; element and select the following
+2 elements from the dropdown and click + Add</strong>:</p><ul><li><p>Sales Item Value Currency</p></li><li><p>Sales Item Value</p></li></ul><p><img loading="lazy" src="/assets/images/image12-8c6fc268e732dd50c2dc6708dddd975b.jpeg" width="1467" height="562" class="img_ev3q"> </p><p>If you now check the preview of the receipt, you will notice that adding
+these 2 elements have had the same effect as the Value element that was
+disabled.</p><p><strong>Note:</strong> Previewing of the Receipt is covered in the next sub-section.</p><p><img loading="lazy" src="/assets/images/image9-c94c889596223dfafdc2468e65beb78f.jpg" width="328" height="324" class="img_ev3q"></p><p>Next, the currency symbol is to be hidden.</p><p>2 -- <strong>Disable the &quot;Sales Item Value Currency&quot; element</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image13-e3883e97d0d87bf9a67df4c360daf7ff.jpeg" width="1465" height="562" class="img_ev3q"> </p><p>Now <strong>click on Save and navigate to the root of the Receipt and save all
+changes</strong> to this Receipt.</p><p>Once these changes have been made, we should navigate to the root of the
+Receipt to save all changes.</p><p>For this click on the
+<strong>Pos/Print/StandardReceiptTemplate44_EN_StandardReceipt44</strong> in the
+Navigation Bar that is found right below the Save button as follows:</p><p><img loading="lazy" src="/assets/images/image14-d3f55044726e61556e52d83d158d0494.jpg" width="1144" height="131" class="img_ev3q"></p><p>A Confirm Navigation popup would appear showing the changes that have
+been made and make sure to click <strong>Save and Continue,</strong> which would save
+the changes in these sections.</p><p>Finally, click on the <strong>Save</strong> button to successfully save the Receipt
+and now you are ready to try out the customised Receipt.</p><p>Previewing the Customised Receipt</p><p>Using the Receipt Maintenance, we will be able to preview the changes
+made to the Receipt. For this go back to the Edit Receipts page of the
+Enactor Standard Receipt 44, and click on the <strong>&quot;→&quot; icon of the Receipt
+Preview</strong> field as follows:</p><p><img loading="lazy" src="/assets/images/image15-399464cc173b036dac8cb6ea3418ed43.jpg" width="1219" height="711" class="img_ev3q"> </p><p>This would navigate to the Retail Transaction Archive of the Estate
+Manager. Using this select a transaction suitable to be used as the
+Receipt Preview.</p><p>Next, in the Edit Receipt Preview page, <strong>Enter a suitable description</strong>
+for this Receipt Preview as follows:</p><p><img loading="lazy" src="/assets/images/image16-3b9cfb9ec3c97e6328c668fcdf804e2c.jpg" width="714" height="250" class="img_ev3q"> </p><p>Once you click <strong>Save</strong>, you can now notice there is a new Show Preview
+icon that appears along with → icon in the Receipt Preview field.</p><p>Click on the <strong>Show Preview of the Receipt Preview field</strong>, which would
+bring up the Receipt Preview.\
+Following are examples of the Receipt Previews before and after the
+currency symbol customisation is made:</p><p><img loading="lazy" src="/assets/images/image9-c94c889596223dfafdc2468e65beb78f.jpg" width="328" height="324" class="img_ev3q">
+<img loading="lazy" src="/assets/images/image17-855e3311b66a3a66a976685b083f95a9.jpg" width="328" height="324" class="img_ev3q"></p><p>This way you can clearly notice that the customisation made to disable
+the currency symbol has been successfully made, and only the value of
+each Merchandise Item is now displayed in the Receipt.</p><p>Printing the Receipt on a Physical Printer</p><p>Now that we have made and previewed a customisation to a receipt, we are
+ready to use this customised Receipt on a physical printer.</p><p>To set this customised Receipt as your Primary Receipt, navigate to the
+POS Terminal Maintenance using the Search or the path:\
+<img loading="lazy" src="/assets/images/image18-6dcae7fb35c68d668f5924ec6700c635.jpg" width="660" height="188" class="img_ev3q"> </p><p>Click on the <strong>Edit icon of the POS Terminal</strong> that the Primary Receipt
+is to be changed.\
+<strong>Go to the tab Printing → General</strong> and in the drop-down for Primary
+Receipt select <strong>Enactor Standard Receipt 44</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image19-a1198a6c115c0bcc16551fb6d3a400f9.jpeg" width="1488" height="670" class="img_ev3q"></p><p>Click <strong>Save</strong> and finally broadcast the following entities to your
+device:</p><ul><li><p>Page Definition</p></li><li><p>Page Definition Detail</p></li><li><p>POS Terminal</p></li></ul><p>After the broadcast has been sent successfully, make sure to restart
+your POS terminal. Finally, carry out a complete transaction in your POS
+and you will be able to notice the receipts printed as follows:</p><p><img loading="lazy" src="/assets/images/image20-b681ae883549d395020d99d341537b05.jpg" width="350" height="433" class="img_ev3q"></p><p>The value for the Merchandise Item is now displayed without the currency
+symbol and hence it can be seen that the Receipt has been successfully
+customised and printed on the physical printer.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="receipt-terminology">Receipt Terminology<a href="#receipt-terminology" class="hash-link" aria-label="Direct link to Receipt Terminology" title="Direct link to Receipt Terminology">​</a></h2><p>This section covers in detail the terminology of the various functions
+available in the Receipt Maintenance such as the unique navigation bar,
+receipt columns and receipt preview functions.</p><h3></h3><h3 class="anchor anchorWithStickyNavbar_LWe7" id="understanding-the-navigation-bar">Understanding the Navigation Bar<a href="#understanding-the-navigation-bar" class="hash-link" aria-label="Direct link to Understanding the Navigation Bar" title="Direct link to Understanding the Navigation Bar">​</a></h3><p>Receipts are structurally complex during configuration and to help with
+this the Receipt Maintenance uses multiple pages to help you drill down
+to the part of the receipt that you wish to change. To prevent the user
+from getting lost during this, a navigation bar is provided.</p><p>The navigation bar basically lists the locations that have been visited
+and how far into the sections of this particular receipt you currently
+are.<img loading="lazy" src="/assets/images/image21-c13fa0b205572aa7cb44631b07be6639.jpeg" width="1516" height="274" class="img_ev3q"></p><p>Following are the 3 navigation item formatting and what they each
+depict:</p><ul><li><p><strong>Bold</strong> - This is the current entry in the navigation bar.</p></li><li><p>[Underlined]<!-- -->{.underline} - This is the previous entry in the
+navigation that can be navigated directly to.</p></li><li><p><strong>*</strong> - This shows that the current or previous entry in the
+navigation bar has been modified and has unsaved changes.</p></li></ul><p><strong>Note:</strong> The most important navigation item in the navigation bar is
+the root of the receipt, i.e., the first navigation item that follows
+&quot;Receipt <!-- -->&gt;<!-- -->&quot; in the navigation bar. The importance is that this is the
+only place in the navigation bar that <strong>allows you to save all the
+changes to the database</strong>.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="managing-receipt-columns">Managing Receipt Columns<a href="#managing-receipt-columns" class="hash-link" aria-label="Direct link to Managing Receipt Columns" title="Direct link to Managing Receipt Columns">​</a></h3><p>The placement of text on a line is controlled by columns. These tell the
+printer where the text should start and end, how it should be aligned,
+and whether there should be any wrapping.</p><p><img loading="lazy" src="/assets/images/image22-d3951bad2d7d20f3f40da39bcfe4c851.jpg" width="848" height="720" class="img_ev3q"> </p><p>The following table details the properties of the Column Definition:</p><table><thead><tr><th>Configuration</th><th>Description</th></tr></thead><tbody><tr><td>Column Def Id</td><td>This ID is used to uniquely identify a column.<br><br>Changing the ID of an existing column will   have no effect on the users of that column and will stop the printer from being able to correctly place the output for that element.</td></tr><tr><td>Start and End Position</td><td>These control where an element can place its output. Positions that start before or end          after the receipt line are meaningless and so will be prevented by the application.<br><br>When multiple columns appear on the same line they are applied in order. Should two columns overlap, the later one will overwrite the earlier one. Whitespace can never overwrite text.</td></tr><tr><td>Allow Wrapping</td><td>Normally a column will truncate any output to fit within its bounds. By enabling wrapping, the column will instead use additional lines to fit any remaining output. Once the wrapping is done normal output will resume from the next line.</td></tr><tr><td>Horizontal and Vertical Alignment</td><td>This controls where the output is to be placed within the start and end boundaries of the column.</td></tr></tbody></table><h3 class="anchor anchorWithStickyNavbar_LWe7" id="managing-previews">Managing Previews<a href="#managing-previews" class="hash-link" aria-label="Direct link to Managing Previews" title="Direct link to Managing Previews">​</a></h3><p>Understanding how a change to a receipt affects the final output of the
+receipt is not simple. To help with this, the Receipt Maintenance allows
+you to select a transaction to view while making your changes. You will
+then be able to see how the receipt for that transaction changes as you
+make customisations using the Receipt Preview option available in the
+Receipt Maintenance.</p><p>The basics of creating a preview was covered in the previous section.
+This section is about how these previews can be managed. Once a preview
+has been created and the Show Preview icon is clicked the following
+Receipt Preview popup appears:</p><p><img loading="lazy" src="/assets/images/image23-2294038adf661495ab1769f48954c9d5.jpg" width="1341" height="545" class="img_ev3q"> </p><p>The following table details the 3 tabs of the Receipt Preview popup:</p><table><thead><tr><th>Configuration</th><th>Description</th></tr></thead><tbody><tr><td>Receipt Preview</td><td>This shows the rendered receipt with all the current changes made for this receipt in the       Receipt maintenance.</td></tr><tr><td>Transaction</td><td>This shows the transaction XML that is used to show the Receipt Preview.</td></tr><tr><td>Manage Previews</td><td>This contains all the options required to manage all the previews that are linked with this receipt.</td></tr></tbody></table><p><strong>Note:</strong> The rendered receipt in the Receipt Preview tab is updated
+whenever a change is made and can be viewed immediately.</p><p>The Manage Previews tab manages a list of previews for a receipt.
+Whenever a preview is chosen it will be added to the list.</p><p><img loading="lazy" src="/assets/images/image24-da35c1c8eacbc73f9daaca81d4992a55.jpg" width="1065" height="334" class="img_ev3q"> </p><p>The following can be done to each receipt preview that is in this list:</p><ul><li><p>Previews that are no longer required can be deleted.</p></li><li><p>Previews can be edited, which goes to the same page used when
+creating the preview.</p></li><li><p>Previews that are not the currently selected preview will have a
+button to switch to that preview.</p></li></ul><p>Eg: If I need to make some customisations that are related to just a
+Style Colour Size product, the <strong>Basic StyleColourSize Product Receipt
+Preview</strong> should be selected from the above shown screen. This preview
+that has been created contains a transaction where just a Style Colour
+Size product has been sold, and this would allow to preview the
+customisations which are relevant to just this. The same way you can
+create your own set of previews here for the different scenarios that
+you will want to customise and preview your receipts.</p><h1>Customisations to Receipts</h1><p>There are various customisations that can be made to Receipts and this
+section covers most of the basic customisations. In the previous
+section, a customisation was made to hide the currency symbol of each
+merchandise item in the printed standard receipt.</p><p>This section would cover step-by-step on a wider range of customisations
+that can be made to Receipts.</p><p><strong>Note:</strong> Each of the following customisations start by using a new
+Standard Receipt that has a 44-columns template from scratch (as shown
+in the Create a new Receipt section) and ends up with the customisation
+being made as per each requirement.</p><p>Following is the preview of the Standard Receipt with the 44-columns
+template without any customisations that we will be using throughout the
+next sections:</p><p><img loading="lazy" src="/assets/images/image25-ee5bdd333e8166674f3d539b0a425b5e.jpg" width="334" height="327" class="img_ev3q"></p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="-1"><a href="#-1" class="hash-link" aria-label="Direct link to -1" title="Direct link to -1">​</a></h3><h2 class="anchor anchorWithStickyNavbar_LWe7" id="hiding-the-negative-symbol-from-item-value-discount-in-tender-sales-lines">Hiding the negative symbol from item value discount in tender sales lines<a href="#hiding-the-negative-symbol-from-item-value-discount-in-tender-sales-lines" class="hash-link" aria-label="Direct link to Hiding the negative symbol from item value discount in tender sales lines" title="Direct link to Hiding the negative symbol from item value discount in tender sales lines">​</a></h2><p>This section will guide you through on how customisations can be done
+when an item value discount is included in the transaction. The current
+Standard Receipt displays item value discounts as follows:</p><p><img loading="lazy" src="/assets/images/image26-cf02c2d1f88b948c2337480f64f22e9d.jpg" width="331" height="357" class="img_ev3q"></p><p>It can be seen here that the discount reason is displayed twice in this
+Receipt and contains the negative symbol for each of the discount
+values.</p><p>In this customisation, we will change the content of the receipt as
+follows:</p><ul><li><p>Disable the item discount that re-appears.</p></li><li><p>Hide the negative symbol of the discount value.</p></li></ul><p>Let us first disable the duplicate item discount that appears in the
+current Receipt.</p><p>1 -- <strong>Navigate to the Receipt Body Section <!-- -->&gt;<!-- --> Basket Items List</strong> where
+we can find the &quot;Discount Item&quot; element that displays the duplicate item
+discount reason.</p><p>2 -- <strong>Disable the Discount Item element</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image27-7add0d4b5e9c1cc0cc766977a1d7c1b7.jpg" width="1421" height="397" class="img_ev3q"> </p><p>3 -- Clicking on Receipt Preview now would show that the duplicate item
+discount reason does not display in the Receipt anymore.</p><p><img loading="lazy" src="/assets/images/image28-3c8254af512605f495e8090ffc2b0e9b.jpg" width="399" height="560" class="img_ev3q"></p><p>Next, we need to hide the negative symbol of the item discount value.</p><p>4 -- From the Basket Items List page, <strong>navigate to Merchandise Item <!-- -->&gt;<!-- -->
+Item Modifiers <!-- -->&gt;<!-- --> Discount Modifier</strong> where we can find the elements
+that display the various item discount values.</p><p>We need to enable the proper elements that would allow us to hide the
+negative symbol for the item discount values.</p><p>5 -- <strong>Disable the &quot;Discount Modifier Review Line&quot; element</strong> and
+<strong>enable the &quot;Discount Percentage Modifier&quot; and &quot;Discount Value
+Modifier&quot; elements</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image29-1835e3c2eabe449547962bcbf4677c24.jpeg" width="1467" height="491" class="img_ev3q"> </p><p>Now that we have the appropriate elements enabled, let us hide the
+negative symbol for the item discount values.</p><p>6 -- <strong>Navigate to the &quot;Discount Value Modifier&quot;</strong> element and <strong>disable
+the Item Reason element</strong> since this element would display a duplicate
+reason.</p><p><img loading="lazy" src="/assets/images/image30-5004d771d93390a0a3d38d43dbace91f.jpeg" width="1462" height="661" class="img_ev3q"> </p><p>Now let us make the final customisations to hide the negative symbol for
+the item discount values.</p><p>7 -- <strong>Navigate to the &quot;Item Value&quot;</strong> element and <strong>add the &quot;Discount
+Absolute&quot; element</strong> and <strong>disable the Discount Value element</strong> as
+follows:</p><p><img loading="lazy" src="/assets/images/image31-444ee93ecfd3d1eb81ee1ad70be055a3.jpeg" width="1467" height="561" class="img_ev3q"> </p><p>Now that we have made all the necessary changes to the item discount
+values, <strong>click on Save and navigate to the root of the Receipt and save
+all changes</strong> to this Receipt.</p><p>You can <strong>select your Receipt again and preview</strong> it before broadcasting
+and using this new customised Receipt in the POS.</p><p><img loading="lazy" src="/assets/images/image32-9da7c21c7e5725c693b89c1e92146fb2.jpg" width="395" height="578" class="img_ev3q"></p><p>If everything is successful, your Receipt will now show discount item
+value without the negative symbol in the POS as follows:</p><p><img loading="lazy" src="/assets/images/image33-ecd9748354d732c264e351f62c1ef850.jpg" width="344" height="472" class="img_ev3q"></p><p>The discount item value for the item appears here as required and hence
+it can be seen that the Receipt has been successfully customised and
+printed on the physical printer.</p><p><strong>Note:</strong> If you are going to use card as the tender option, then it is
+the Combined Receipt type which is used in the POS to print and not the
+Standard Receipt. Hence, the same changes done above for the Standard
+Receipt should also be made to the Combined Receipt.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="-2"><a href="#-2" class="hash-link" aria-label="Direct link to -2" title="Direct link to -2">​</a></h3><h2 class="anchor anchorWithStickyNavbar_LWe7" id="add-content-such-as-date-time-and-thank-you-message-to-the-footer">Add content such as date, time and thank you message to the footer<a href="#add-content-such-as-date-time-and-thank-you-message-to-the-footer" class="hash-link" aria-label="Direct link to Add content such as date, time and thank you message to the footer" title="Direct link to Add content such as date, time and thank you message to the footer">​</a></h2><p>This section will guide you through on how customisations can be done in
+the footer section of the Receipt. In the existing Standard Receipts
+footer, there is already a line with the date, time, name and
+transaction ID. And also, this line is below the message that says,
+&quot;Thank you for shopping at Enactor&quot;.</p><p>In this customisation, we will change the content of the footer and
+display it in the following order:</p><ul><li><p>Display only the date and time.</p></li><li><p>Display the Thank you message.</p></li><li><p>Centre align both lines.</p></li></ul><p>Let us first disable the Thank you message that appears in the current
+Receipt.</p><p>1 -- <strong>Navigate to the Receipt Barcode Section</strong> where we can find the
+&quot;Location Trailer Lines&quot; element that displays the Thank you message.</p><p>2 -- <strong>Disable the Location Trailer Lines element</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image34-c538d63e28db1867a4c5b3babb7d5193.jpeg" width="1449" height="523" class="img_ev3q"></p><p>3 -- Clicking on Receipt Preview now would show that the Thank you
+message does not display in the Receipt anymore.</p><p><img loading="lazy" src="/assets/images/image35-f305768410c26ea61900e4cf6c12c697.jpg" width="402" height="530" class="img_ev3q"></p><p>Next, we need to disable the existing line that displays date, time,
+name and transaction ID.</p><p>4 -- <strong>Navigate to the Receipt Footer Section</strong> where we can find the
+&quot;Trailer Line&quot; element that displays the date, time, name and
+transaction ID.</p><p>5 -- <strong>Disable the Trailer Lines Element</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image36-5204b1faf9185c31a2697700201f06fb.jpeg" width="1467" height="684" class="img_ev3q"> </p><p>6 -- Clicking on Receipt Preview now would show that the date, time,
+name and transaction ID does not display in the Receipt anymore.</p><p><img loading="lazy" src="/assets/images/image37-b30c20ee880a445bd81a35a9a8368cc4.jpg" width="404" height="511" class="img_ev3q"></p><p>Now that we have disabled the existing elements of the current receipt,
+we can now start adding the elements in the order that we need.</p><p>First, we need to add the element to display just the date and time in
+the Receipt Footer.</p><p>1 -- In the Elements column, from the dropdown, <strong>select the &quot;Header
+Line&quot; element</strong> and <strong>click on the Add button</strong>.</p><p>2 -- Now we need to move it up in the order list.</p><p><strong>Use the up arrow of the Header Line element row and move this element
+to the position of the Trailer Lines element</strong> that was disabled.</p><p><img loading="lazy" src="/assets/images/image38-913cd7b15041f3ce06fb2ad70f2f7f56.jpeg" width="1464" height="721" class="img_ev3q"> </p><p>We must now customise this element to display only the Date and Time.</p><p>3 -- <strong>Click on the edit icon of the Header Line element</strong> and <strong>disable
+the two elements that are not required to display the date and time</strong>.</p><p>The two date and time related elements that are enabled have &quot;Three
+Columns Row 1 (Left)&quot; assigned to them. This gives a left alignment to
+this element.</p><p>4 -- To centre align the date and time elements, <strong>change the
+corresponding columns to &quot;Full Width (Centre</strong>)&quot; as follows:</p><p><img loading="lazy" src="/assets/images/image39-7e8bf5ba4d5d838e716b35a8180e907c.jpeg" width="1462" height="696" class="img_ev3q"> </p><p>Now that we have customised to display only the centred date and time in
+our Receipt footer, <strong>click Save</strong>.</p><p>Finally, we need to display the Thank you message as the final line of
+the Receipt.</p><p>1 -- In the Elements column of the Receipt Footer section, from the
+dropdown, <strong>select the &quot;Location Trailer Lines&quot; element</strong> and <strong>click on
+the + Add button</strong>.</p><p>Since we need the Page Break to be final element of the Receipt, we need
+to move the Location Trailer Lines element up in the order list.</p><p>2 -- <strong>Use the up arrow of the Location Trailer Lines element row and
+move this element to the position of the Page Break element</strong>.</p><p><img loading="lazy" src="/assets/images/image40-b3bd0f653b6bd50dd42bb5b313bfbf7d.jpeg" width="1464" height="711" class="img_ev3q"> </p><p>Now that we have made all the necessary changes to the Receipt Footer
+section, <strong>click on Save and navigate to the root of the Receipt and
+save all changes</strong> to this Receipt.</p><p>You can <strong>select your Receipt again and preview</strong> it before broadcasting
+and using this new customised Receipt in the POS.</p><p><img loading="lazy" src="/assets/images/image41-d3cb7772d7bc590434236f47c31af4d4.jpg" width="405" height="625" class="img_ev3q"></p><p>If everything is successful, your Receipt will now display the
+customised Receipt Footer in the POS as follows:</p><p><img loading="lazy" src="/assets/images/image42-b1ecfb07ec3ba095d2737c13571fa83b.jpg" width="354" height="503" class="img_ev3q"></p><p>The Receipt Footer appears here as required and hence it can be seen
+that the Receipt has been successfully customised and printed on the
+physical printer.</p><p><strong>Note:</strong> If you are going to use card as the tender option, then it is
+the Combined Receipt type which is used in the POS to print and not the
+Standard Receipt. Hence, the same changes done above for the Standard
+Receipt should also be made to the Combined Receipt.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="addition-of-the-active-selling-code-in-the-receipt">Addition of the Active Selling Code in the Receipt<a href="#addition-of-the-active-selling-code-in-the-receipt" class="hash-link" aria-label="Direct link to Addition of the Active Selling Code in the Receipt" title="Direct link to Addition of the Active Selling Code in the Receipt">​</a></h2><p>This section will guide you through on how customisations can be done
+when products are sold using the Active Selling Code.</p><p>In this customisation, we will change the content of the receipt and
+display it in the following order:</p><ul><li><p>Display the Active Selling Code underneath the Product Description.</p></li><li><p>Display the Item Value in the Active Selling Code line.</p></li><li><p>Hide the Item Value from the Product Description line.</p></li></ul><p>Let us first display the Active Selling Code for each Merchandise
+Product.</p><p>1 -- <strong>Navigate to the Receipt Body Section → Basket Items List →
+Merchandise Item</strong> where we can find the &quot;<strong>Merchandise Item Trailer</strong>&quot;
+element.</p><p><img loading="lazy" src="/assets/images/image43-15861dc094caa054feced208c6ab7a42.jpg" width="1600" height="494" class="img_ev3q"> </p><p>2 -- <strong>Navigate into the Merchandise Item Trailer</strong> element where we can
+find the &quot;Merchandise Item Article&quot; element that enables the Active
+Selling Code.</p><p>3-- <strong>Tick in the Enable column of the Merchandise Item Article</strong> to
+enable this element.</p><p><img loading="lazy" src="/assets/images/image44-8498f0f9e26682135e67ba65d403851a.jpg" width="1600" height="361" class="img_ev3q"> </p><p>After enabling this element, click on the edit icon to further customise
+this element. This would show that the Merchandise Item Article Element
+consists of the following Elements:</p><ul><li><p><strong>Merchandise Item Article Number</strong>: This element contains the text
+for the Active Selling code.</p></li><li><p><strong>Merchandise Item Value</strong>: This element contains the currency and
+value of the item.</p></li></ul><p>Following is a Receipt Preview that shows what has happened after
+enabling this.</p><p><img loading="lazy" src="/assets/images/image45-051feac01f0c767adb401a3b95f61f5d.jpg" width="336" height="462" class="img_ev3q"></p><p>We can notice that in front of the Active Selling Code, it says
+&quot;Article&quot;. We need to disable the Article text that appears and leave
+only the Active Selling Code in this line.</p><p>4 -- To do this, click on the <strong>Edit icon of Merchandise Item Article
+Number</strong>, and <strong>Disable the Merchandise Article Text and Single
+Spacing</strong> elements as follows:</p><p><img loading="lazy" src="/assets/images/image46-f56f609c286d2d1f7ddb2dd0c5eb90df.jpg" width="1600" height="501" class="img_ev3q"> </p><p>[Finally, w]<!-- -->{.mark}e need to disable the Item Value that appears in the
+Product Description line.</p><p>1 -- <strong>Go back to the root of the Receipt</strong> and <strong>Click Save and
+Continue</strong> when prompted.</p><p>2 -- <strong>Navigate to the following path</strong>:\
+Receipt Body Section → Basket Items List → Merchandise Item →
+Merchandise Standard Item Details</p><p>3 -- <strong>Disable the Value element</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image47-fbb72857e958e13b2f94ff58b2f30e07.jpeg" width="1465" height="693" class="img_ev3q"> </p><p>Now that we have made all the necessary changes as required, <strong>click on
+Save and navigate to the root of the Receipt and save all changes</strong> to
+this Receipt.</p><p>You can <strong>select your Receipt again and preview</strong> it before broadcasting
+and using this new customised Receipt in the POS.</p><p><img loading="lazy" src="/assets/images/image48-2580f302e64ab4988c00c9f46c18a4c7.jpg" width="384" height="560" class="img_ev3q"></p><p>If everything is successful, the customised Receipt with the Active
+Selling Code will now show in the POS as follows:</p><p><img loading="lazy" src="/assets/images/image49-82f60ece9f97ad110ed5107935ae7137.jpg" width="357" height="456" class="img_ev3q"></p><p>The Active Selling code for the item appears here as required and hence
+it can be seen that the Receipt has been successfully customised and
+printed on the physical printer.</p><p><strong>Note:</strong> If the Product sold does not have an Active Selling Code, then
+the Product ID would replace this and display in the Receipt.</p><p><strong>Note:</strong> If you are going to use card as the tender option, then it is
+the Combined Receipt type which is used in the POS to print and not the
+Standard Receipt. Hence, the same changes done above for the Standard
+Receipt should also be made to the Combined Receipt.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="style-colour-size-product-customisations">Style Colour Size Product Customisations<a href="#style-colour-size-product-customisations" class="hash-link" aria-label="Direct link to Style Colour Size Product Customisations" title="Direct link to Style Colour Size Product Customisations">​</a></h2><p>This section covers the customisations of the Receipts that are related
+to Style Colour Size Products.</p><p>The current Standard Receipt displays Style Colour Size Products as
+follows:</p><p><img loading="lazy" src="/assets/images/image50-cded7c75cade4c43c21f9783d82c51e7.jpg" width="411" height="657" class="img_ev3q"></p><p>You can notice that the Product Description line and the Style, Colour
+and Size lines are all together. In this customisation we will change
+the content of the receipt to display the Style, Colour and Size lines
+indented to the right for each product, so that it will make the Receipt
+look more organised.</p><p>1 -- <strong>Navigate to the Receipt Body Section → Basket Items List →
+Merchandise Item</strong> <strong>→</strong> <strong>Merchandise Item Style Colour Size Details</strong>
+where we can find the Style, Colour and Size elements.</p><p>2 - For these 3 elements, <strong>change the column from Item Detail 1 to Item
+Detail Line 2</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image51-de0d440b7a29ae4fac0a31029501bd8d.jpeg" width="1466" height="613" class="img_ev3q"> </p><p>Now that we have made all the necessary changes as required, <strong>click on
+Save and navigate to the root of the Receipt and save all changes</strong> to
+this Receipt.</p><p>You can <strong>select your Receipt again and preview</strong> it before broadcasting
+and using this new customised Receipt in the POS.</p><p><img loading="lazy" src="/assets/images/image52-8623bd8f2b183816253a601e5e01082f.jpg" width="448" height="833" class="img_ev3q"></p><p>If everything is successful, the customised Receipt with the Style,
+Colour and Size customisations will now show in the POS as follows:</p><p><img loading="lazy" src="/assets/images/image53-0b9d275a2ef2321171c3321891fa26b5.jpg" width="355" height="608" class="img_ev3q"></p><p>The Style, Colour and Size customisations for the item appears here as
+required and hence it can be seen that the Receipt has been successfully
+customised and printed on the physical printer.</p><p><strong>Note:</strong> If you are going to use card as the tender option, then it is
+the Combined Receipt type which is used in the POS to print and <strong>not</strong>
+the Standard Receipt. Hence, the same changes done above for the
+Standard Receipt should also be made to the Combined Receipt.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="basket-modifiers">Basket Modifiers<a href="#basket-modifiers" class="hash-link" aria-label="Direct link to Basket Modifiers" title="Direct link to Basket Modifiers">​</a></h2><p>This section covers the customisations that are related to basket item
+modifiers of the basket items such as item discounts, transaction
+discounts and price overrides.</p><p>The current Standard Receipt displays discounts as follows:</p><p><img loading="lazy" src="/assets/images/image26-cf02c2d1f88b948c2337480f64f22e9d.jpg" width="331" height="357" class="img_ev3q"></p><p>It can be seen here that the discount reason is displayed twice in this
+Receipt, the discount value contains brackets and the item price after
+the reduction is not displayed in this Receipt.</p><p>So before starting any of the basket modifier customisations, let us
+first customise the current Standard Receipt to show the basket item
+modifiers in a clean and clear manner.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="initial-customisation-for-basket-modifiers">Initial Customisation for Basket Modifiers<a href="#initial-customisation-for-basket-modifiers" class="hash-link" aria-label="Direct link to Initial Customisation for Basket Modifiers" title="Direct link to Initial Customisation for Basket Modifiers">​</a></h3><p>In this customisation, we will change the current Standard Receipt
+content of the receipt as follows:</p><ul><li><p>Hide the item value that appears at the end of product description
+line.</p></li><li><p>Disable the item discount that re-appears.</p></li><li><p>Hide the brackets and leave just the discount value with the
+negative symbol.</p></li><li><p>Display the final item value after discount, along with its Active
+Selling Code.</p></li></ul><p>Let us first hide the item value of the item and leave only the product
+description in the first line of each item in the Receipt.</p><p>1 -- <strong>Navigate to the Receipt Body Section → Basket Items List →
+Merchandise Item → Merchandise Standard Item Details</strong> and disable the
+&quot;<strong>Value</strong>&quot; element as follows:</p><p><img loading="lazy" src="/assets/images/image54-19d5087297564f21696289b5a26817d8.jpg" width="1600" height="784" class="img_ev3q"> </p><p>This would now hide the item value and leave only the product
+description in the first line of each item in the Receipt as follows:</p><p><img loading="lazy" src="/assets/images/image55-15f3f2b7a5fc832e7850bca2c0507039.jpg" width="342" height="532" class="img_ev3q"></p><p>Now we have to disable the duplicate item discount that appears in the
+current Receipt.</p><p>1 -- <strong>Navigate to the Receipt Body Section <!-- -->&gt;<!-- --> Basket Items List</strong> where
+we can find the &quot;Discount Item&quot; element that displays the duplicate item
+discount reason.</p><p>2 -- <strong>Disable the Discount Item element</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image27-7add0d4b5e9c1cc0cc766977a1d7c1b7.jpg" width="1421" height="397" class="img_ev3q"> </p><p>3 -- Clicking on Receipt Preview now would show that the duplicate item
+discount does not display in the Receipt anymore.</p><p><img loading="lazy" src="/assets/images/image56-5d57669082df924b8a9e06526ceaa402.jpg" width="347" height="519" class="img_ev3q"></p><p>Next, we need to hide the brackets and leave just the item discount
+value with the negative symbol.</p><p>1 -- From the Basket Items List page, <strong>navigate to Merchandise Item <!-- -->&gt;<!-- -->
+Item Modifiers <!-- -->&gt;<!-- --> Discount Modifier</strong> where we can find the elements
+that display the various item discount values.</p><p>The <strong>Discount Modifier Review Line</strong> is the element that displays the
+discount values with the brackets.</p><p>2 -- <strong>Disable the &quot;Discount Modifier Review Line&quot; element</strong> and
+<strong>enable the &quot;Discount Percentage Modifier&quot; and &quot;Discount Value
+Modifier&quot; elements</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image29-1835e3c2eabe449547962bcbf4677c24.jpeg" width="1467" height="491" class="img_ev3q"> </p><p>This would now display the applied discount along with its reason as
+follows:</p><p><img loading="lazy" src="/assets/images/image57-5e8b79d5a52a8b1c4229c921fed7a031.jpg" width="354" height="533" class="img_ev3q"></p><p>Now let us display the final item value after discount, along with its
+Active Selling Code.</p><p>1 -- <strong>Navigate to the Receipt Body Section → Basket Items List →
+Merchandise Item</strong> where we can find the &quot;<strong>Merchandise Item Trailer</strong>&quot;
+element.</p><p><img loading="lazy" src="/assets/images/image58-c66f6d842fd3315332a849f997922b5d.jpg" width="1600" height="494" class="img_ev3q"> </p><p>2 -- <strong>Navigate into the Merchandise Item Trailer</strong> element where we can
+find the &quot;Merchandise Item Article&quot; element that enables the Active
+Selling Code.</p><p>3-- <strong>Tick in the Enable column of the Merchandise Item Article</strong> to
+enable this element.</p><p><img loading="lazy" src="/assets/images/image59-ca24525bb3ff4482bd59d2b9d40a3b3e.jpg" width="1600" height="361" class="img_ev3q"> </p><p>Following is a Receipt Preview that shows what has happened after
+enabling this.</p><p><img loading="lazy" src="/assets/images/image60-cde4c1ceb9c9ed991adc6008a1bd29d6.jpg" width="341" height="550" class="img_ev3q"></p><p>Now that we have made all the necessary changes as required, <strong>click on
+Save and navigate to the root of the Receipt and save all changes</strong> to
+this Receipt.</p><p>This Standard Receipt is now ready to make basket modifier
+customisations.</p><p><strong>Note:</strong> If you are going to use card as the tender option, then it is
+the Combined Receipt type which is used in the POS to print and not the
+Standard Receipt. Hence, the same changes done for the Standard Receipt
+should also be made to the Combined Receipt.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="item-discount-pricing">Item Discount Pricing<a href="#item-discount-pricing" class="hash-link" aria-label="Direct link to Item Discount Pricing" title="Direct link to Item Discount Pricing">​</a></h3><p>This section will guide you through on how Item Discount customisations
+can be made in Receipts.</p><p>In this customisation, we will change the content of the receipt and
+display it in the following order:</p><ul><li><p>Display only the Product Description of the item without the value.</p></li><li><p>Display the Original Price of the item.</p></li><li><p>Display the Item Discount and value.</p></li><li><p>Display the Item Discount Reason.</p></li><li><p>Display the Product ID or Active Selling Code and the final value of
+the item.</p></li></ul><p>From the above list, the current customised standard receipt only needs
+customisations for the first 2 lines of the Receipt, i.e., hiding the
+item value from line 1 and adding the new line 2 which displays the
+original price of the item.</p><p><strong>Note:</strong> Before starting the customisations in this section, make sure
+that you have made the customisations to the Standard Receipt as
+discussed in the sub-section &quot;Initial Customisation for Basket
+Modifiers&quot;.</p><p>Let us first add the new line to display as line 2, of each item in the
+basket, which is to display the original price of this item before the
+item discount is applied.</p><p>1-- <strong>Navigate to the Receipt Body Section → Basket Items List →
+Merchandise Item → Item Modifiers</strong> and enable the &quot;<strong>PreItem Modifiers
+Conditional</strong>&quot; element as follows:</p><p><img loading="lazy" src="/assets/images/image61-2970e188557d7388b0fc3aa78f570c95.jpeg" width="1467" height="557" class="img_ev3q"> </p><p>This element would display the below contents of the Receipt for each
+item in the basket:</p><p><img loading="lazy" src="/assets/images/image62-19deb10332785f08b21613402ebbbf7b.jpg" width="429" height="742" class="img_ev3q"></p><p>By enabling the above element, you can notice that the original price is
+displayed but the following 2 adjustments are to be made:</p><ul><li><p>Remove the duplicate item discount that appears from the Discount
+Modifier element.</p></li><li><p>Fix the alignment of the Original Price label.</p></li></ul><p>2 -- In the current <strong>Item Modifiers</strong> page, <strong>disable the two &quot;Discount
+Modifier&quot;</strong> elements.</p><p>3 -- In this same page, <strong>navigate to PreItem Modifiers Conditional <!-- -->&gt;<!-- -->
+PreItem Modifiers Item Value</strong>.</p><p>4 -- For the &quot;Original Value Label&quot; element, <strong>change the column to Item
+Detail Line 2</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image63-149cf093a5b2999473c7716b69d2939f.jpeg" width="1464" height="691" class="img_ev3q"> </p><p>Now that we have made all the necessary changes as required, <strong>click on
+Save and navigate to the root of the Receipt and save all changes</strong> to
+this Receipt.</p><p>You can <strong>select your Receipt again and preview</strong> it before broadcasting
+and using this new customised Receipt in the POS.</p><p><img loading="lazy" src="/assets/images/image64-b94ddf454e180353fe5c2260386a7275.jpg" width="431" height="704" class="img_ev3q"></p><p>If everything is successful, the customised Receipt with the Item
+Discount customisations will now show in the POS as follows:</p><p><img loading="lazy" src="/assets/images/image65-720da69791b287cc3cefde8ead1759c8.jpg" width="355" height="510" class="img_ev3q"></p><p>The Item Discount will be displayed in the format as required and hence
+it can be seen that the Receipt has been successfully customised and
+printed on the physical printer.</p><p><strong>Note:</strong> If you are going to use card as the tender option, then it is
+the Combined Receipt type which is used in the POS to print and not the
+Standard Receipt. Hence, the same changes done above for the Standard
+Receipt should also be made to the Combined Receipt.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="transaction-discount-pricing">Transaction Discount Pricing<a href="#transaction-discount-pricing" class="hash-link" aria-label="Direct link to Transaction Discount Pricing" title="Direct link to Transaction Discount Pricing">​</a></h3><p>This section will guide you through on how Transaction Discount
+customisations can be made in Receipts.</p><p>Following shows how transaction discounts are displayed in the current
+customised standard receipt:</p><p><img loading="lazy" src="/assets/images/image66-96ddd3c6b45b1fdc67c1d3dc4f6cab60.jpg" width="422" height="715" class="img_ev3q"></p><p><strong>Note:</strong> Before starting the customisations in this section, make sure
+that you have made the customisations to the Standard Receipt as
+discussed in the sub-section &quot;Initial Customisation for Basket
+Modifiers&quot;.</p><p>In this customisation, we will change the content of the receipt and
+display it in the following order:</p><ul><li><p>Display only the Product Description of the item without the value.</p></li><li><p>Display the Product ID or Active Selling Code and the final value of
+the item.</p></li><li><p>Display a separator after all the basket items.</p></li><li><p>Display the total of the original prices of the items in the basket.</p></li><li><p>Display the reason and total value of all the Transaction Discount
+applied for each item in the basket.</p></li><li><p>Display the final total of the Receipt which is the transaction
+discounts total deducted from the original price.</p></li></ul><p>From the above list, the current customised standard receipt needs
+customisations for displaying the transaction discount and value of each
+basket item, display a separator at the end of the basket items and
+displaying of the 3 totals.</p><p>Let us add the separator, total transaction discount value and the final
+total value of the Receipt.</p><p>1-- <strong>Navigate to the Receipt Body Section, disable the &quot;Transaction
+Discount Item List&quot; element</strong> and <strong>enable the &quot;Basket Transaction Items
+List&quot; element</strong>.</p><p>2 -- <strong>Navigate into the &quot;Basket Transaction Items List&quot; element</strong> and
+enable both elements that are displayed as follows:</p><p><img loading="lazy" src="/assets/images/image67-0b65dbee04091a728c43e6662234967b.jpeg" width="1464" height="482" class="img_ev3q"> </p><p>This element would display in the receipt as follows:</p><p><img loading="lazy" src="/assets/images/image68-94f5beb34fcd1b20592ae102675403b0.jpg" width="375" height="698" class="img_ev3q"></p><p>Let us now add a separator line to the first line of this element.</p><p>3 -- <strong>Navigate into the PreBasket Transaction Discounts Conditional <!-- -->&gt;<!-- -->
+PreTransaction Discounts Total</strong> and from the dropdown, <strong>select the
+&quot;Separator&quot; element</strong> and <strong>click on the + Add button</strong>. Now <strong>move it
+up to the first row by clicking on the up-arrow of this element</strong> once.</p><p>Let also fix the alignment of the Total Label here.</p><p>4 -- <strong>Change the Column of the Label row to &quot;Item Detail Line 1</strong>&quot; as
+follows:</p><p>After adding the Seperator and fixing the total label alignment, the
+changes made are as follows:</p><p><img loading="lazy" src="/assets/images/image69-a1a592c0fc381d0cb77b9f2990e74516.jpeg" width="1464" height="704" class="img_ev3q"> </p><p>The receipt preview after making the above changes is now shown as
+below:</p><p><img loading="lazy" src="/assets/images/image70-001e4c12885bebfe8f5cf24524a83473.jpg" width="414" height="798" class="img_ev3q"></p><p>There is still a duplicate transaction discount item line that appears
+above the new element that we added, which is to be removed.</p><p>5-- <strong>Navigate to the Receipt Body Section → Basket Items List</strong> and
+<strong>disable the &quot;Transaction Discount Item&quot; element.</strong></p><p>Now that we have made all the necessary changes as required, <strong>click on
+Save and navigate to the root of the Receipt and save all changes</strong> to
+this Receipt.</p><p>You can <strong>select your Receipt again and preview</strong> it before broadcasting
+and using this new customised Receipt in the POS.</p><p><img loading="lazy" src="/assets/images/image71-d0ae7b63b6720813308d9d066122d7d7.jpg" width="434" height="754" class="img_ev3q"></p><p>If everything is successful, the customised Receipt with the Transaction
+Discount customisations will now show in the POS as follows:</p><p><img loading="lazy" src="/assets/images/image72-bda2500fd7fe2f889028d2309a4510d7.jpg" width="347" height="549" class="img_ev3q"></p><p>The Transaction Discount will be displayed in the format as required and
+hence it can be seen that the Receipt has been successfully customised
+and printed on the physical printer.</p><p><strong>Note:</strong> If you are going to use card as the tender option, then it is
+the Combined Receipt type which is used in the POS to print and not the
+Standard Receipt. Hence, the same changes done above for the Standard
+Receipt should also be made to the Combined Receipt.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="price-overrides">Price Overrides<a href="#price-overrides" class="hash-link" aria-label="Direct link to Price Overrides" title="Direct link to Price Overrides">​</a></h3><p>This section will guide you through on how Price Override customisations
+can be made in Receipts.</p><h4 class="anchor anchorWithStickyNavbar_LWe7" id="price-override-down">Price Override Down<a href="#price-override-down" class="hash-link" aria-label="Direct link to Price Override Down" title="Direct link to Price Override Down">​</a></h4><p>Following shows how Price Override Down is displayed in the current
+customised standard receipt:</p><p><img loading="lazy" src="/assets/images/image73-6e6ef60cc995ab0a6113bd4c28466315.jpg" width="485" height="748" class="img_ev3q"></p><p><strong>Note:</strong> Before starting the customisations in this section, make sure
+that you have made the customisations to the Standard Receipt as
+discussed in the sub-section &quot;Initial Customisation for Basket
+Modifiers&quot;.</p><p>In this customisation, we will change the content of the receipt and
+display it in the following order:</p><ul><li><p>Display only the Product Description of the item without the value.</p></li><li><p>Display the Original Price of the item.</p></li><li><p>Display the Price Override and its value with a negative symbol.</p></li><li><p>Display the Product ID or Active Selling Code and the final value of
+the item.</p></li><li><p>Remove the Duplicate Price Override that appears with a 0 value.</p></li></ul><p>From the above list, the current customised standard receipt needs
+customisations from lines 2 to 4, which displays the original price,
+price override and the price override reason of the basket item. We need
+to also finally remove the duplicate price override that appears.</p><p>Let us first enable the original price of the item.</p><p>1 -- <strong>Navigate to Receipt Body Section <!-- -->&gt;<!-- --> Basket Items List <!-- -->&gt;<!-- -->
+Merchandise Item <!-- -->&gt;<!-- --> Item Modifiers <!-- -->&gt;<!-- --> Price Override Modifier</strong>.</p><p>2 -- <strong>Enable the &quot;PreItem Modifiers Line&quot; element</strong> and <strong>change its
+column alignment to &quot;Item Detail Line 2&quot; from the column dropdown</strong> as
+follows:</p><p><img loading="lazy" src="/assets/images/image74-f626cab3bb87221b28ef6bf39cb1d563.jpeg" width="1464" height="707" class="img_ev3q"> </p><p>The Receipt Preview would now display the Original Price as follows:</p><p><img loading="lazy" src="/assets/images/image75-f38bf87b9be037c2ebdb1c6abef1f725.jpg" width="463" height="775" class="img_ev3q"></p><p>Now we have to add the Price Override and its value with a negative
+symbol.</p><p>3 -- In the same Price Override Modifier page, <strong>enable the &quot;Price
+Difference&quot; element</strong> and now the Receipt Preview will be as follows:</p><p><img loading="lazy" src="/assets/images/image76-81ec4a017c69423229a68197fd2bd37d.jpg" width="476" height="772" class="img_ev3q"> </p><p>Let us now disable the duplicate price override line that appears at the
+end of the basket.</p><p>4 -- <strong>Navigate back to the Basket Items List element</strong> and <strong>disable
+the &quot;Price Override Item&quot; element</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image77-f11a21c6a892f99d84b7b7eab28cea0e.jpeg" width="1465" height="460" class="img_ev3q"> </p><p>Now that we have made all the necessary changes as required, <strong>click on
+Save and navigate to the root of the Receipt and save all changes</strong> to
+this Receipt.</p><p>You can <strong>select your Receipt again and preview</strong> it before broadcasting
+and using this new customised Receipt in the POS.</p><p><img loading="lazy" src="/assets/images/image78-2dbdee7a9dda09d072b2896194f6db80.jpg" width="384" height="685" class="img_ev3q"> </p><p>If everything is successful, the customised Receipt with the Price
+Override down customisations will now show in the POS as follows:</p><p><img loading="lazy" src="/assets/images/image79-2a189afe0121645a841507416dc248c8.jpg" width="354" height="556" class="img_ev3q"></p><p>The Price Override down will be displayed in the format as required and
+hence it can be seen that the Receipt has been successfully customised
+and printed on the physical printer.</p><p><strong>Note:</strong> If you are going to use card as the tender option, then it is
+the Combined Receipt type which is used in the POS to print and not the
+Standard Receipt. Hence, the same changes done above for the Standard
+Receipt should also be made to the Combined Receipt.</p><h4 class="anchor anchorWithStickyNavbar_LWe7" id="price-override-up">Price Override Up<a href="#price-override-up" class="hash-link" aria-label="Direct link to Price Override Up" title="Direct link to Price Override Up">​</a></h4><p>Following shows how Price Override Up is displayed in the current
+customised standard receipt:</p><p><img loading="lazy" src="/assets/images/image80-104b872066f503d6d1802761b892c593.jpg" width="485" height="740" class="img_ev3q"> </p><p><strong>Note:</strong> Before starting the customisations in this section, make sure
+that you have made the customisations to the Standard Receipt as
+discussed in the sub-section &quot;Initial Customisation for Basket
+Modifiers&quot;.</p><p>In this customisation, we will change the content of the receipt and
+display it in the following order:</p><ul><li><p>Display only the Product Description of the item without the value.</p></li><li><p>Remove the Price Override up in the Receipt.</p></li><li><p>Display the Product ID or Active Selling Code and the final value of
+the item.</p></li><li><p>Remove the Duplicate Price Override that appears with a 0 value.</p></li></ul><p>From the above list, the current customised standard receipt needs
+customisations only to the lines 2 and 4, where we need to also remove
+the price override reason up and the duplicate price override that
+appears.</p><p>Let us first remove the price override reason up of the item.</p><p>1 -- <strong>Navigate to Receipt Body Section <!-- -->&gt;<!-- --> Basket Items List <!-- -->&gt;<!-- -->
+Merchandise Item <!-- -->&gt;<!-- --> Item Modifiers</strong>.</p><p>2 -- <strong>Enable the &quot;PreItem Modifiers Price Override Conditional&quot;
+element</strong> and <strong>disable the two &quot;Price Override Modifier&quot; element</strong> as
+follows:</p><p><img loading="lazy" src="/assets/images/image81-132aa4301fde81a0c9b3072fb358593b.jpeg" width="1462" height="576" class="img_ev3q"> </p><p>The Receipt Preview would now display as follows:</p><p><img loading="lazy" src="/assets/images/image82-57e8eefe8ab31173bfcaeab09ab64a4d.jpg" width="483" height="725" class="img_ev3q"></p><p>Let us now disable the duplicate price override line that appears at the
+end of the basket.</p><p>3 -- <strong>Navigate back to the Basket Items List element</strong> and <strong>disable
+the &quot;Price Override Item&quot; element</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image83-257078ae5e7fc5cd0b64cdbfa672630b.jpg" width="1600" height="505" class="img_ev3q"></p><p>Now that we have made all the necessary changes as required, <strong>click on
+Save and navigate to the root of the Receipt and save all changes</strong> to
+this Receipt.</p><p>You can <strong>select your Receipt again and preview</strong> it before broadcasting
+and using this new customised Receipt in the POS.</p><p><img loading="lazy" src="/assets/images/image84-8565ee393071b18ea84ebcb2ddae9c65.jpg" width="396" height="644" class="img_ev3q"></p><p>If everything is successful, the customised Receipt with the Price
+Override up customisations will now show in the POS as follows:</p><p><img loading="lazy" src="/assets/images/image85-466f67c01b7d4363d2d736625a3ffdec.jpg" width="354" height="516" class="img_ev3q"></p><p>The Price Override up will be displayed in the format as required and
+hence it can be seen that the Receipt has been successfully customised
+and printed on the physical printer.</p><p><strong>Note:</strong> If you are going to use card as the tender option, then it is
+the Combined Receipt type which is used in the POS to print and not the
+Standard Receipt. Hence, the same changes done above for the Standard
+Receipt should also be made to the Combined Receipt.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="promotions">Promotions<a href="#promotions" class="hash-link" aria-label="Direct link to Promotions" title="Direct link to Promotions">​</a></h3><p>This section will guide you through on how Promotion customisations can
+be made in Receipts.</p><p>Following shows how promotions are displayed in the current customised
+standard receipt:</p><p><img loading="lazy" src="/assets/images/image86-1221d4618462b3e4313df4f1c81f6686.jpg" width="378" height="704" class="img_ev3q"></p><p><strong>Note:</strong> Before starting the customisations in this section, make sure
+that you have made the customisations to the Standard Receipt as
+discussed in the sub-section &quot;Initial Customisation for Basket
+Modifiers&quot;.</p><p>In this customisation, we will change the content of the receipt and
+display it in the following order:</p><ul><li><p>Display only the Product Description of the item without the value.</p></li><li><p>Display the label &quot;Current Value&quot; and the value of the item.</p></li><li><p>Display the label &quot;Promotion&quot; and the value.</p></li><li><p>Display the Promotion Description.</p></li><li><p>Display the Product ID or Active Selling Code and the final value of
+the item.</p></li><li><p>Hide the Savings section that displays the promotion calculations.</p></li></ul><p>From the above list, the current customised standard receipt needs
+customisations for displaying the current value label and the value of
+the item, the promotion label and value, the promotion description and
+hiding the savings section that shows the promotion calculations.</p><p>Let us first add the current value label and the value of the item
+before promotion.</p><p>1 -- <strong>Navigate to the Receipt Body Section <!-- -->&gt;<!-- --> Basket Item List <!-- -->&gt;<!-- -->
+Merchandise Item <!-- -->&gt;<!-- --> Item Modifiers</strong></p><p>2 -- <strong>Disable the 2 &quot;Promotion Modifier&quot; elements</strong>, <strong>enable the
+&quot;PreItem Modifiers Promotions Conditional&quot; element</strong> and <strong>navigate into
+&quot;PreItem Modifiers Promotions Conditional <!-- -->&gt;<!-- --> Promotion Modifier&quot;</strong> as
+follows:</p><p><img loading="lazy" src="/assets/images/image87-0acc895e932b58ff3ed75bace8fb5826.jpeg" width="1462" height="699" class="img_ev3q"> </p><p>The receipt preview after making the above changes is now shown as
+below:</p><p><img loading="lazy" src="/assets/images/image88-4e630a9b593abcc301abeebc2810117a.jpg" width="379" height="725" class="img_ev3q"> </p><p>Now we have to display the label &quot;Promotion&quot; and the value, followed by
+the Promotion Descriptions.</p><p>3 -- <strong>Disable the &quot;Promotion Saving Item Trigger&quot; elements</strong>.</p><p>4 -- <strong>Enable the &quot;Distributed Promotion Savings&quot; and &quot;Distributed
+Promotion Savings Amount&quot; elements</strong>.</p><p>5 -- Move the <strong>&quot;Distributed Promotion Savings&quot; element above the
+&quot;Distributed Promotion Savings Amount&quot; element</strong>.</p><p><img loading="lazy" src="/assets/images/image89-e893380f062018a4e69d194997980b6a.jpeg" width="1464" height="702" class="img_ev3q"> </p><p>The receipt preview after making the above changes is now shown as
+below:</p><p><img loading="lazy" src="/assets/images/image90-a32a2c19d9b49bfbe7d8865ba26df3c4.jpg" width="392" height="724" class="img_ev3q"></p><p>Now let us fix the alignments of the Promotion and Current Value labels.</p><p>6 -- <strong>Navigate to the &quot;Distributed Promotion Savings Amount&quot; element</strong>
+and <strong>change the column of the &quot;Item&quot; element to Item Detail Line 1</strong> as
+follows:</p><p><img loading="lazy" src="/assets/images/image91-b333fd7e9f8c6b275fb34f9a28e5bf2a.jpeg" width="1464" height="680" class="img_ev3q"> </p><p>7 -- Now <strong>navigate back out to the &quot;PreItem Modifiers Promotions
+Conditional&quot; element</strong> and then from there, <strong>into the &quot;PreItem
+Promotions Item Value\&quot; element</strong> and <strong>change the column of the
+&quot;Original Value Label&quot; element to Item Detail Line 1</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image92-85da190742071f1e507256d650cd7f07.jpeg" width="1467" height="631" class="img_ev3q"> \
+The receipt preview after making the above changes is now shown as
+below:</p><p><img loading="lazy" src="/assets/images/image93-f9397991a23fca192a82b286f07a3f3d.jpg" width="385" height="728" class="img_ev3q"></p><p>Now we have to finally hide the Savings section that displays the
+promotion calculations.</p><p>6 -- <strong>Navigate back out to the &quot;Receipt Body Section&quot; element</strong> and
+<strong>disable &quot;Promotion Calculation&quot; element</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image94-8300b1841bae3b181e873cb97a48e798.jpeg" width="1465" height="657" class="img_ev3q"> </p><p>Now that we have made all the necessary changes as required, <strong>click on
+Save and navigate to the root of the Receipt and save all changes</strong> to
+this Receipt.</p><p>You can <strong>select your Receipt again and preview</strong> it before broadcasting
+and using this new customised Receipt in the POS.</p><p><img loading="lazy" src="/assets/images/image95-2d3b0c093a9684d50a0a405263d8839b.jpg" width="392" height="693" class="img_ev3q"></p><p>If everything is successful, the customised Receipt with the Promotion
+customisations will now show in the POS as follows:</p><p><img loading="lazy" src="/assets/images/image96-f9c9fbf8bd5170364e3a3fba4992e8b0.jpg" width="350" height="569" class="img_ev3q"> </p><p>The Promotion will be displayed in the format as required and hence it
+can be seen that the Receipt has been successfully customised and
+printed on the physical printer.</p><p><strong>Note:</strong> If you are going to use card as the tender option, then it is
+the Combined Receipt type which is used in the POS to print and not the
+Standard Receipt. Hence, the same changes done above for the Standard
+Receipt should also be made to the Combined Receipt.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="multiple-basket-items">Multiple Basket Items<a href="#multiple-basket-items" class="hash-link" aria-label="Direct link to Multiple Basket Items" title="Direct link to Multiple Basket Items">​</a></h2><p>This section covers the customisations that are related to multiple
+basket items, which is where a quantity of two or more of a single
+product is added in the basket.</p><p>All the elements related to Multiple Basket Item customisations can be
+found in the below 2 elements:</p><p><strong>Receipt Body Section → Basket Items List → Merchandise Item Multiple</strong></p><p><strong>Receipt Body Section → Basket Items List → Non Merchandise Item
+Multiple</strong></p><p>The two main customisations that will be covered here will be on how
+measurement products and item quantity pricing with discounts will be
+customised.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="item-quantity-pricing-with-discounts">Item Quantity Pricing with Discounts<a href="#item-quantity-pricing-with-discounts" class="hash-link" aria-label="Direct link to Item Quantity Pricing with Discounts" title="Direct link to Item Quantity Pricing with Discounts">​</a></h3><p>This section will guide you through on how item quantity pricing with
+discounts customisations can be made in Receipts.</p><p>Following shows how an item quantity pricing with a discount is
+displayed in the current customised standard receipt:</p><p><img loading="lazy" src="/assets/images/image97-11b1d42cbe731192f9182f7a2f81bd3d.jpg" width="496" height="775" class="img_ev3q"></p><p><strong>Note:</strong> Before starting the customisations in this section, make sure
+that you have made the customisations to the Standard Receipt as
+discussed in the sub-section &quot;Initial Customisation for Basket
+Modifiers&quot;.</p><p>In this customisation, we will change the content of the receipt and
+display it in the following order:</p><ul><li><p>Display only the Product Description of the item without the value.</p></li><li><p>Remove the value appearing at the end of this line.</p></li><li><p>Display the discount with its value.</p></li><li><p>Display the discount reason.</p></li><li><p>Display the Product ID or Active Selling Code and the final value of
+the item.</p></li></ul><p>From the above list, the current customised standard receipt only needs
+customisations in the second line where we need to remove the final
+value that appears for this basket item.</p><p>1-- <strong>Navigate to the Receipt Body Section → Basket Items List →
+Merchandise Item Multiple → Merchandise Standard Item Details Multiple</strong>
+and disable the &quot;<strong>Value</strong>&quot; element as follows:</p><p><img loading="lazy" src="/assets/images/image98-f40921091f36e282d5364553a46fa50b.jpg" width="1450" height="731" class="img_ev3q"></p><p><img loading="lazy" src="/assets/images/image99-c7dc5021c0a0933b5948780ff70e0eb2.jpeg" width="1467" height="336" class="img_ev3q"> \
+Now that we have made all the necessary changes to the item quantity
+pricing with discounts standard receipt, click on Save and navigate to
+the root of the Receipt and save all changes to this Receipt.</p><p>You can select your Receipt again and preview it before broadcasting and
+using this new customised Receipt in the POS.</p><p><img loading="lazy" src="/assets/images/image100-b318ed8fd9564cc3dae654805113b119.jpg" width="482" height="772" class="img_ev3q"></p><p>If everything is successful, the customised Receipt with the item
+quantity pricing with discounts standard receipt will now show in the
+POS as follows:</p><p><img loading="lazy" src="/assets/images/image101-0700c433719f408db5df67594fed24c2.jpg" width="351" height="522" class="img_ev3q"></p><p>The item quantity pricing with discounts standard receipt will be
+displayed in the format as required and hence it can be seen that the
+Receipt has been successfully customised and printed on the physical
+printer.</p><p><strong>Note:</strong> If you are going to use card as the tender option, then it is
+the Combined Receipt type which is used in the POS to print and not the
+Standard Receipt. Hence, the same changes done above for the Standard
+Receipt should also be made to the Combined Receipt.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="measurement-products">Measurement Products<a href="#measurement-products" class="hash-link" aria-label="Direct link to Measurement Products" title="Direct link to Measurement Products">​</a></h3><p>This section will guide you through on how measurement product
+customisations can be made in Receipts.</p><p>Following shows how measurement products are displayed in the current
+customised standard receipt:</p><p><img loading="lazy" src="/assets/images/image102-95688f7390d0e759648870c40124b572.jpg" width="399" height="606" class="img_ev3q"></p><p><strong>Note:</strong> Before starting the customisations in this section, make sure
+that you have made the customisations to the Standard Receipt as
+discussed in the sub-section &quot;Initial Customisation for Basket
+Modifiers&quot;.</p><p>In this customisation, we will change the content of the receipt and
+display it in the following order:</p><ul><li><p>Display only the Product Description of the item without the value.</p></li><li><p>Display Quantity, @ symbol and POS Price per measurement with the
+currency symbol.\
+Eg: 3 @ £5.00</p></li><li><p>Display the Product ID or Active Selling Code and the final value of
+the item.</p></li></ul><p>From the above list, the current customised standard receipt only needs
+customisations for displaying the second line that consists of the
+measurements of the product.</p><p>1-- <strong>Navigate to the Receipt Body Section → Basket Items List →
+Merchandise Item Multiple → Merchandise Standard Item Details Multiple</strong>
+and disable the &quot;<strong>Item Line</strong>&quot; element and enable the <strong>&quot;Quantity
+Line&quot;</strong> element as follows:</p><p><img loading="lazy" src="/assets/images/image103-a6664df99a824486d088472ef419dde8.jpeg" width="1428" height="721" class="img_ev3q"> </p><p>2 -- <strong>Navigate into the &quot;Measured Quantity&quot; element</strong> where you will
+find all the elements that make up the measurement line of the product
+in the receipt.</p><p>3 -- Disable the following elements in the same order as shown below:</p><ul><li><p>Sales Item Units of Measure Description</p></li><li><p>Single Spacing</p></li><li><p>Item Measured Quantity Per Label Text</p></li><li><p>Sales Item Units of Measure Description</p></li></ul><p><img loading="lazy" src="/assets/images/image104-12ded86fa907362e4296ac24b336d197.jpeg" width="1428" height="689" class="img_ev3q"> </p><p>Now that we have made all the necessary changes to the Measurement
+Product standard receipt, click on Save and navigate to the root of the
+Receipt and save all changes to this Receipt.</p><p>You can select your Receipt again and preview it before broadcasting and
+using this new customised Receipt in the POS.</p><p><img loading="lazy" src="/assets/images/image105-2cfe90312ce9d528b112614c9fbb11b2.jpg" width="486" height="746" class="img_ev3q"></p><p>If everything is successful, the customised Receipt with the Measurement
+Product customisations will now show in the POS as follows:</p><p><img loading="lazy" src="/assets/images/image106-0a2b3a34a808ea56be20da6d6c0de231.jpg" width="342" height="481" class="img_ev3q"></p><p>The Measurement Product will be displayed in the format as required and
+hence it can be seen that the Receipt has been successfully customised
+and printed on the physical printer.</p><p><strong>Note:</strong> If you are going to use card as the tender option, then it is
+the Combined Receipt type which is used in the POS to print and not the
+Standard Receipt. Hence, the same changes done above for the Standard
+Receipt should also be made to the Combined Receipt.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="voided-transactions">Voided Transactions<a href="#voided-transactions" class="hash-link" aria-label="Direct link to Voided Transactions" title="Direct link to Voided Transactions">​</a></h2><p>This section will guide you through on how customisations can be done
+for the receipts that get printed when a transaction void is done in the
+POS. The current Standard Receipt displays transaction void as follows:</p><p><img loading="lazy" src="/assets/images/image107-5f72241490e9485b74bca2b4fe042f58.jpg" width="346" height="538" class="img_ev3q"></p><p>In this customisation, we will change the content of the receipt and
+display it in the following order:</p><ul><li><p>Remove the Manager Signature Line.</p></li><li><p>Display the list of the items that were in the basket before voiding
+the transaction by striking-through each of the lines as follows:\
+<del>JVC LT-40CA898</del>\
+<del>Original Price £299.00</del>\
+<del>Discount £-8.00</del>\
+<del>Item Discount</del>\
+<del>Article 500100 £291.00</del></p></li></ul><p><strong>Note:</strong> Receipt Preview cannot be used to validate the customisations.
+This is because voided transactions are not recorded in the retail
+transaction archive and cannot be added as a preview. A broadcast needs
+to be sent to the POS terminal for this receipt and then this receipt
+can be printed on a physical printer in order to validate the
+customisations made.</p><p>We will first display the list of the items that were in the basket
+before voiding the transaction by striking-through each of the lines.</p><p>1 -- In the Standard Receipt, <strong>Navigate to Receipt Body Section</strong> and
+<strong>Enable the &quot;Basket Transaction Void Item List&quot; element as follows:</strong></p><p><img loading="lazy" src="/assets/images/image108-af0fb38caba9b22ea605bfaf6bf4a85f.jpeg" width="1463" height="603" class="img_ev3q"> </p><p>The receipt after making the above changes is now shown as below:</p><p><img loading="lazy" src="/assets/images/image109-ac4369e32aa04602eaf99538b92d9fb4.jpg" width="342" height="626" class="img_ev3q"></p><p>Now let us remove the Manager Signature Line.</p><p>2 -- <strong>Navigate to Receipt Body Section → Basket Items List →
+Transaction Void Item</strong> and <strong>disable the main &quot;Manager Signature&quot;
+element as follows:</strong></p><p><img loading="lazy" src="/assets/images/image110-0db5d1e4ed32af0d9a4868fa180d670b.jpeg" width="1464" height="628" class="img_ev3q"> </p><p>Now that we have made all the necessary changes to the Standard Receipt
+for Voided Transactions, click on Save and navigate to the root of the
+Receipt and save all changes to this Receipt.</p><p>If everything is successful, the Standard Receipt with the Voided
+Transaction customisations will now show in the POS as follows:</p><p><img loading="lazy" src="/assets/images/image111-82372bde64ec0f431571ffdfc026f3d5.jpg" width="359" height="537" class="img_ev3q"></p><p>The Standard Receipt for Voided Transactions will be displayed in the
+format as required and hence it can be seen that the Receipt has been
+successfully customised and printed on the physical printer.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="duplicate-receipts">Duplicate Receipts<a href="#duplicate-receipts" class="hash-link" aria-label="Direct link to Duplicate Receipts" title="Direct link to Duplicate Receipts">​</a></h2><p>This section will guide you through on how customisations can be done
+for copy receipts in the POS. The current Standard Receipt displays a
+copy receipt is as follows:</p><p><img loading="lazy" src="/assets/images/image112-116649406575e90f977b5b26987f512f.jpg" width="336" height="490" class="img_ev3q"></p><p>In this customisation, we will change the content of the receipt and
+display it in the following order:</p><ul><li>Change the header from Copy 1 to Receipt Copy with dotted lines on
+the top and bottom of the header as follows:\
+...<!-- -->.<!-- -->..<!-- -->.<!-- -->..<!-- -->.<!-- -->..<!-- -->.<!-- -->..<!-- -->.<!-- -->..<!-- -->.<!-- -->..<!-- -->.<!-- -->..<!-- -->.<!-- -->..<!-- -->.<!-- -->...\
+Receipt Copy\
+...<!-- -->.<!-- -->..<!-- -->.<!-- -->..<!-- -->.<!-- -->..<!-- -->.<!-- -->..<!-- -->.<!-- -->..<!-- -->.<!-- -->..<!-- -->.<!-- -->..<!-- -->.<!-- -->..<!-- -->.<!-- -->...</li></ul><p><strong>Note:</strong> Receipt Preview cannot be used to validate the customisations.
+This is because duplicate transactions are not recorded in the retail
+transaction archive and cannot be added as a preview. A broadcast needs
+to be sent to the POS terminal for this receipt and then this receipt
+can be printed on a physical printer in order to validate the
+customisations made.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="pre-requisites">Pre-requisites<a href="#pre-requisites" class="hash-link" aria-label="Direct link to Pre-requisites" title="Direct link to Pre-requisites">​</a></h3><p>Before making any duplicate receipt configurations, we should make sure
+that we have the following configured:</p><ul><li><p>POS Terminal should be configured to print the correct receipt as
+the additional receipt.</p></li><li><p>There should be a product or a reason that is configured, which
+would allow to print additional copy receipts.</p></li></ul><p>To set your customised Receipt as your Additional Receipt, navigate to
+the POS Terminal Maintenance using the Search or the path:</p><p><img loading="lazy" src="/assets/images/image113-eee05d36ad76ac99cbb430619e8bb487.jpg" width="660" height="188" class="img_ev3q"> </p><p>Click on the <strong>Edit icon of the POS Terminal</strong> that the Additional
+Receipt is to be changed. Go to the tab Printing → General and in the
+drop-down for Additional Receipt 1 and Additional Receipt 2, select
+<strong>Enactor Standard Receipt 44</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image114-0ad9156ca8dbe9a671db56ed4eab9e4d.jpg" width="1464" height="661" class="img_ev3q"> </p><p>Now we need to configure a product or reason which would initiate the
+printing of the duplicate receipts.</p><p>Set via product configuration as follows:</p><p><img loading="lazy" src="/assets/images/image115-ec7b6b9aa477cb2b21161190525f42ae.jpg" width="1406" height="794" class="img_ev3q"> </p><p>Set via reason configuration as follows:</p><p><img loading="lazy" src="/assets/images/image116-a2b6b34bef84e0879925c8d1bdccda2d.jpg" width="1267" height="758" class="img_ev3q"> </p><p>Once these configurations have been made send a broadcast to your POS
+Terminal which includes the following entities:</p><ul><li><p>POS Terminal</p></li><li><p>Product</p></li><li><p>Reason</p></li></ul><p><img loading="lazy" src="/assets/images/image117-d931b5845ce9709f1f3e9638aa52c58a.jpg" width="1266" height="796" class="img_ev3q"> </p><p>We can now get duplicate receipts printed in our physical printer.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="customisations">Customisations<a href="#customisations" class="hash-link" aria-label="Direct link to Customisations" title="Direct link to Customisations">​</a></h3><p>Let us now start customising this duplicate receipt which is the Enactor
+Standard Receipt 44 that has been used so far.</p><p>We need to first add the dotted lines for the header of the duplicate
+receipt.</p><p>1 -- <strong>Navigate to the Receipt Header Section <!-- -->&gt;<!-- --> Copy Header</strong> which is
+the element that contains the label that displays the header of the
+duplicate receipt.</p><p>2 -- <strong>Select the &quot;Dotted Line&quot; element from the dropdown and click +
+Add twice</strong> and move one of the dotted lines to the line 1 as follows:</p><p><img loading="lazy" src="/assets/images/image118-0936a097e0fe5b374c3e248803b3deea.jpeg" width="1463" height="674" class="img_ev3q"> </p><p>Now let us change the text of the header in copy receipt.</p><p>3 -- <strong>Click on the Translatable Messages tab</strong> which shows the Message
+Resource, Message ID and Message Text that is used as follows:</p><p><img loading="lazy" src="/assets/images/image119-93d805525f1fc32f0362f21203bc8824.jpeg" width="1435" height="347" class="img_ev3q"></p><p><strong>Note:</strong> It is important to make a note of the Message Resource and
+Message ID that is used and then navigate to the Application Translation
+Maintenance where we would change the Message Text for the Message ID.</p><p>5 -- Now <strong>click on Save and navigate to the root of the Receipt and
+save all changes</strong> to this Receipt.</p><p>6 -- <strong>Navigate to Application Translations</strong> using the Search or the
+path</p><p><img loading="lazy" src="/assets/images/image120-3fa81eac3ebded48738133c9fd089a87.jpg" width="694" height="198" class="img_ev3q"> </p><p>7 -- In the Application Translation Maintenance, <strong>Filter the Package as
+Enactor POS</strong> and then <strong>click Ctrl+F on the keyboard and search for the
+&quot;Pos/Print/ReceiptMessages&quot; Message Resource</strong>.</p><p><img loading="lazy" src="/assets/images/image121-c573589822c86dcb1eba9c9c15555009.jpg" width="1452" height="727" class="img_ev3q"></p><p>8 -- Click on the + icon to navigate into this Message Resource and then
+<strong>click Ctrl+F on the keyboard and search for the \&quot;COPY_HEADER\&quot;
+Message ID</strong>.</p><p>9 -- <strong>Change the text from &quot;Copy {receiptCopyNumber}&quot; to &quot;Receipt
+Copy&quot;</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image122-fd6ddf8f48b7c51f00e44d0d91b8aca6.jpg" width="1462" height="741" class="img_ev3q"> </p><p>10 -- Now <strong>send a broadcast to your POS Terminal which includes the
+following entities</strong>:</p><ul><li><p>Message Resource</p></li><li><p>Page Definition</p></li><li><p>Page Definition Detail</p></li><li><p>POS Terminal</p></li></ul><p><img loading="lazy" src="/assets/images/image123-0216a5f70289b09464fedb48ad270652.jpg" width="1347" height="802" class="img_ev3q"> </p><p>If everything is successful, the customised Receipt with the duplicate
+receipt customisations will now show in the POS as follows:</p><p><img loading="lazy" src="/assets/images/image124-6a418be0407862f7b16c1a74564c0c1b.jpg" width="347" height="521" class="img_ev3q"></p><p>The duplicate receipt will be displayed in the format as required and
+hence it can be seen that the Receipt has been successfully customised
+and printed on the physical printer.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="stored-transactions">Stored Transactions<a href="#stored-transactions" class="hash-link" aria-label="Direct link to Stored Transactions" title="Direct link to Stored Transactions">​</a></h2><p>This section will guide you through on how customisations can be done
+for the receipts that get printed when a transaction is stored in the
+POS.</p><p>The Stored Transaction Receipt is of a different receipt type and this
+new receipt must be created and configured in the POS Terminal as well.</p><p>Let us first create this new receipt.</p><p>1 -- <strong>Navigate to the Receipt Maintenance</strong> and <strong>click on + New
+Receipt Document</strong>.</p><p>2 -- <strong>Set the appropriate values</strong> for the new Stored Transaction
+Receipt as follows:</p><p><img loading="lazy" src="/assets/images/image125-1261e5e46d48f5d1156051d4c19a38f3.jpg" width="616" height="294" class="img_ev3q"></p><p>3 -- <strong>Set an appropriate Receipt Name</strong> and <strong>click on Save</strong>.</p><p><img loading="lazy" src="/assets/images/image126-086a3daad9454607bb5437c41530e456.jpg" width="1261" height="799" class="img_ev3q"> </p><p>Now let us configure the POS Terminal to use this Receipt to print the
+Stored Transaction Receipt.</p><p>4 -- Navigate to the POS Terminal Maintenance using the Search or the
+path:</p><p><img loading="lazy" src="/assets/images/image127-db794512254011cbee48bdc7d46f55fa.jpg" width="660" height="188" class="img_ev3q"> </p><p>5 -- Click on the <strong>Edit icon of the POS Terminal</strong> that the Stored
+Transaction Receipt is to be changed. <strong>Go to the tab Printing →
+General</strong> and in the <strong>drop-down for Transaction Stored Receipt</strong>,
+select <strong>Enactor Stored Transaction Receipt</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image128-20b573f9df196333dee2f86d5790eb55.jpeg" width="1466" height="662" class="img_ev3q"> </p><p><strong>Save and broadcast the following entities</strong> which will successfully
+set up your new Transaction Stored Receipt to be printed in your POS
+Terminal printer:</p><ul><li><p>POS Terminal</p></li><li><p>Page Definition</p></li><li><p>Page Definition Detail</p></li></ul><p>The Stored Transaction Receipt displays in the POS Terminal as follows:</p><p><img loading="lazy" src="/assets/images/image129-b7f48111bb3c3b28fed50e9746e7e228.jpg" width="357" height="506" class="img_ev3q"></p><p>In this customisation, we will change the content of the receipt and
+display it in the following order:</p><ul><li><p>Change the Sale header inside the dotted lines to display the text
+as Stored.</p></li><li><p>Remove the 2 lines after total that displays the date, time and
+transaction stored text.</p></li></ul><p><strong>Note:</strong> Receipt Preview cannot be used to validate the customisations.
+This is because stored transactions are not recorded in the retail
+transaction archive and cannot be added as a preview. A broadcast needs
+to be sent to the POS terminal for this receipt and then this receipt
+can be printed on a physical printer in order to validate the
+customisations made.</p><p>Let us first get the Sale header to appear inside the dotted lines.</p><p>1 -- In the Receipt Maintenance for this new Stored Transaction Receipt,
+<strong>enable the &quot;Stored Transaction Header Section&quot; element</strong> which would
+show the following receipt preview:</p><p><img loading="lazy" src="/assets/images/image130-8d027e5f4ceb7a1f2785de895ce927d4.jpg" width="360" height="523" class="img_ev3q"></p><p>Now let us disable the duplicate Sale header.</p><p>2-- <strong>Navigate to Receipt Header Section, disable the &quot;Sale Header&quot;
+element</strong> and <strong>click on Save</strong>.</p><p>Now we have to change the Sale header to display the text as Stored.</p><p>3 -- <strong>Navigate to Stored Transaction Header Section <!-- -->&gt;<!-- --> Sale Header <!-- -->&gt;<!-- -->
+Header</strong> and <strong>click on the Displayed Text icon</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image131-34eded61fddf3e21817ee48576c1684a.jpg" width="1464" height="500" class="img_ev3q"> </p><p>4 -- Now <strong>click on the edit icon</strong> and <strong>in the Message Translation
+field, enter a new unique Message ID</strong> which we will create next in the
+application translation.</p><p><img loading="lazy" src="/assets/images/image132-cef625a0f21c15c34e5ff20e0f003f34.jpeg" width="1459" height="364" class="img_ev3q"> </p><p>5 -- Now <strong>click on Save and navigate to the root of the Receipt and
+save all changes</strong> to this Receipt.</p><p>We have to now create a new message for the message ID that was entered.</p><p>6 -- <strong>Navigate to Application Translations</strong> using the Search or the
+path</p><p><img loading="lazy" src="/assets/images/image133-96acc2b3339fbdede6714b8c32f323f5.jpg" width="694" height="198" class="img_ev3q"> </p><p>7 -- In the Application Translation Maintenance, <strong>Filter the Package as
+Enactor POS</strong> and then <strong>click Ctrl+F on the keyboard and search for the
+&quot;Pos/Print/ReceiptMessages&quot; Message Resource</strong>.</p><p><img loading="lazy" src="/assets/images/image134-548d026740f868216caddc4a36391a1c.jpg" width="1600" height="804" class="img_ev3q"></p><p>8 -- At the bottom <strong>enter the Message ID and Message Text</strong> as follows
+and <strong>click on + Add Message:</strong></p><p><img loading="lazy" src="/assets/images/image135-4dc48b74e2e8150bcad64c30c2e9bf78.jpg" width="562" height="837" class="img_ev3q"> </p><p>9 - <strong>Click on Save</strong> which will successfully create a new Message for
+the Message ID that you defined for the Sale Header.</p><p>Let us now remove the 2 lines after total that displays the date, time
+and transaction stored text.</p><p>10 -- In your Stored Transaction Receipt, <strong>Navigate to the Stored
+Transaction Body Section</strong> and <strong>disable the &quot;Transaction Stored&quot;
+element</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image136-eb769171bf117b5bc16e3f9595905f31.jpeg" width="1464" height="525" class="img_ev3q"> </p><p>Now that we have made all the necessary changes to the Stored
+Transaction Receipt, click on Save and navigate to the root of the
+Receipt and save all changes to this Receipt.</p><p>Make sure to broadcast the following entities to your POS terminal:</p><ul><li><p>Message Resource</p></li><li><p>Page Definition</p></li><li><p>Page Definition Detail</p></li><li><p>POS Terminal</p></li></ul><p>If everything is successful, the Stored Transaction Receipt with the
+customisations will now show in the POS as follows:</p><p><img loading="lazy" src="/assets/images/image137-2ced112c830859cef6ed7ea3522ef8dc.jpg" width="350" height="450" class="img_ev3q"> </p><p>The Stored Receipt will be displayed in the format as required and hence
+it can be seen that the Receipt has been successfully customised and
+printed on the physical printer.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="receipt-return">Receipt Return<a href="#receipt-return" class="hash-link" aria-label="Direct link to Receipt Return" title="Direct link to Receipt Return">​</a></h2><p>This section will guide you through on how customisations can be done
+for the receipts that get printed when a receipt return is done in the
+POS. When this is done, there is a separate receipt type called
+&quot;Customer Signature Slip&quot; which is used to get the signature of the
+customer when returns are made. The current Standard Receipt and
+Customer Signature Slip displays receipt returns as follows:</p><p><img loading="lazy" src="/assets/images/image138-4c5f26256269cd6ffec492efe83df698.jpg" width="280" height="722" class="img_ev3q"></p><p>First the customer signature slip is printed and then the standard
+receipt which shows the refund of the receipt return is printed.</p><p>This section will cover each of these receipt types in separate
+sub-sections.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="standard-receipt-customisation">Standard Receipt Customisation<a href="#standard-receipt-customisation" class="hash-link" aria-label="Direct link to Standard Receipt Customisation" title="Direct link to Standard Receipt Customisation">​</a></h3><p>This is the Receipt that prints the items that are returned and
+following is the preview for this:</p><p><img loading="lazy" src="/assets/images/image139-406f3d929b831975d5eece46fd469304.jpg" width="421" height="705" class="img_ev3q"></p><p><strong>Note:</strong> The above preview is the standard receipt after making the
+changes shown in the section &quot;Addition of the Active Selling Code in the
+Receipt&quot;, which has changed the formatting that the basket items are
+shown.</p><p>In this customisation, the changes we will make are:</p><ul><li><p>A line that says &quot;Refund&quot; should be added before each basket item.</p></li><li><p>The letter that appears at the start of each basket item should be
+removed.</p></li></ul><p>1 -- In the Standard Receipt, <strong>Navigate to Receipt Body Section →
+Basket Items List → Merchandise Item → Merchandise Standard Item
+Details</strong>.</p><p>2 -- <strong>Enable the &quot;Flags&quot; element, Disable the &quot;Return Flag&quot; element</strong>
+and <strong>change the column from Flag to Item Detail Line 1</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image140-886b4795963c39a19b13c77ee3d38ea7.jpeg" width="1462" height="712" class="img_ev3q"> </p><p>The receipt preview after making the above changes is now shown as
+below:</p><p><img loading="lazy" src="/assets/images/image141-97613fb39ab5ceadf02f575e49eceb40.jpg" width="396" height="658" class="img_ev3q"> </p><p>Now we have to change the text R to Return.</p><p>3 -- <strong>Navigate into the &quot;Flags&quot; element</strong> and <strong>Click on the Displayed
+Text icon of the &quot;Item Return Flag Label Text&quot; element</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image142-c4767e74042caaf2683989cf23d70163.jpeg" width="1463" height="537" class="img_ev3q"> </p><p>You will notice the Message Translation ID is &quot;ITEM_RETURN_FLAG&quot;.</p><p>4 -- Now <strong>click on Save and navigate to the root of the Receipt and
+save all changes</strong> to this Receipt.</p><p>We have to now change the message of the Message Translation ID
+&quot;ITEM_RETURN_FLAG&quot;, which displays the message R, into Return.</p><p>6 -- <strong>Navigate to Application Translations</strong> using the Search or the
+path</p><p><img loading="lazy" src="/assets/images/image143-4aa6857af56b28578267216a6342c238.jpg" width="694" height="198" class="img_ev3q"> </p><p>7 -- In the Application Translation Maintenance, <strong>Filter the Package as
+Enactor POS</strong> and then <strong>click Ctrl+F on the keyboard</strong> and <strong>search for
+the &quot;Pos/Print/ReceiptMessages&quot; Message Resource</strong>.</p><p><img loading="lazy" src="/assets/images/image144-f6326a99b3eeb3b0229887db5c8cc8b4.jpg" width="1600" height="804" class="img_ev3q"> </p><p>8 -- C<strong>lick Ctrl+F on the keyboard again</strong> and <strong>search for the
+&quot;ITEM_RETURN_FLAG&quot;,</strong> <strong>enter the text &quot;Return&quot; in the field of that
+Message ID</strong> and <strong>click on Save</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image145-1ccce03f8f685eb09666ff5f2a214b21.jpeg" width="1467" height="715" class="img_ev3q"> </p><p>You can <strong>select your Receipt again and preview</strong> it before broadcasting
+and using this new customised Receipt in the POS.</p><p><img loading="lazy" src="/assets/images/image146-7ec674ea5b69b8d7589d852036d7304f.jpg" width="393" height="658" class="img_ev3q"> </p><p>If everything is successful, the customised Receipt with the Return
+customisations will now show in the POS as follows:</p><p><img loading="lazy" src="/assets/images/image147-1fb26f7bfc5349bc2e87752eece1c9a6.jpg" width="341" height="541" class="img_ev3q"></p><p>The Return will be displayed in the format as required and hence it can
+be seen that the Receipt has been successfully customised and printed on
+the physical printer.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="customer-signature-slip-customisation">Customer Signature Slip Customisation<a href="#customer-signature-slip-customisation" class="hash-link" aria-label="Direct link to Customer Signature Slip Customisation" title="Direct link to Customer Signature Slip Customisation">​</a></h3><p>This is a separate receipt that is printed before the standard receipt,
+where the purpose is to receive the customer details and the signature
+at the point of the return transaction.</p><p>The Customer Signature Slip is a receipt that is of a different receipt
+type and this new receipt must be created and configured in the POS
+Terminal as well.</p><p>Let us first create this new receipt.</p><p>1 -- <strong>Navigate to the Receipt Maintenance</strong> and <strong>click on + New
+Receipt Document</strong>.</p><p>2 -- <strong>Set the appropriate values</strong> for the new Customer Signature Slip
+as follows:</p><p><img loading="lazy" src="/assets/images/image148-e7655f3cfa5c9bd1e901a94946a12f9a.jpg" width="599" height="267" class="img_ev3q"> </p><p>3 -- <strong>Set an appropriate Receipt Name</strong> and <strong>click on Save</strong>.</p><p><img loading="lazy" src="/assets/images/image149-eb18ea427a5182bab3dd41fff4dc9937.jpg" width="1171" height="704" class="img_ev3q"> </p><p>Now let us configure the POS Terminal to use this Receipt to print the
+Customer Signature Slip.</p><p>4 -- Navigate to the POS Terminal Maintenance using the Search or the
+path:</p><p><img loading="lazy" src="/assets/images/image150-2a286965b1faff5ee15746100712b3dc.jpg" width="660" height="188" class="img_ev3q"> </p><p>5 -- Click on the <strong>Edit icon of the POS Terminal</strong> that the Customer
+Signature Slip is to be changed. <strong>Go to the tab Printing → Sundry</strong> and
+in the <strong>drop-down for Customer Signature Slip</strong>, select <strong>Enactor
+Customer Signature Slip</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image151-ea51809777da1545ab73b5650b6c1c7c.jpeg" width="1462" height="673" class="img_ev3q"> </p><p><strong>Save and broadcast the following entities</strong> which will successfully
+set up your new Customer Signature Slip to be printed in your POS
+Terminal printer:</p><ul><li><p>POS Terminal</p></li><li><p>Page Definition</p></li><li><p>Page Definition Detail</p></li></ul><p>Following is the Receipt Preview in the Receipt Maintenance for the
+Customer Signature Slip that was created:</p><p><img loading="lazy" src="/assets/images/image152-71105f13ad75c1da802d5fc3d8b971e2.jpg" width="427" height="694" class="img_ev3q"></p><p>In this customisation, we will replace the customer signature line that
+is shown in the above preview by adding the following 3 lines:</p><ul><li><p>Have a title as Customer.</p></li><li><p>Customer Name\
+<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_</p></li><li><p>Customer Signature\
+<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_<!-- -->_</p></li></ul><p>To do this, <strong>Navigate to Customer Signature Slip Entry Section</strong> and
+disable the &quot;Customer Signature Compact&quot; element and enable the
+&quot;Customer Signature Expanded&quot; element as follows:</p><p><img loading="lazy" src="/assets/images/image153-7d34d2f2be505e125737e13419d1d023.jpeg" width="1450" height="477" class="img_ev3q"></p><p>Now that we have made all the necessary changes to the Customer
+Signature Slip, click on Save and navigate to the root of the Receipt
+and save all changes to this Receipt.</p><p>You can select your Receipt again and preview it before broadcasting and
+using this new customised Receipt in the POS.</p><p><img loading="lazy" src="/assets/images/image154-dbbc9bb27759b439dcecc40fcd92fc6c.jpg" width="430" height="841" class="img_ev3q"></p><p>If everything is successful, the Customer Signature Slip Receipt with
+customisations will now show in the POS as follows:</p><p><img loading="lazy" src="/assets/images/image155-aa985bb04fde2edee12428ac93ca7418.jpg" width="331" height="527" class="img_ev3q"></p><p>The Customer Signature Slip Receipt appears here as required and hence
+it can be seen that the Receipt has been successfully customised and
+printed on the physical printer.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="cash-management-receipts">Cash Management Receipts<a href="#cash-management-receipts" class="hash-link" aria-label="Direct link to Cash Management Receipts" title="Direct link to Cash Management Receipts">​</a></h2><p>This section will guide you through on how customisations can be done
+for the receipts that get printed when Cash Management transactions are
+carried out in the POS.</p><p>For Cash Management, there are 3 different types of receipts and based
+on the cash management function that is carried out, each of these
+receipts are printed in the printer. Following are the 3 cash management
+receipt types:</p><ul><li><p>Cash Management Normal Receipt.</p></li><li><p>Cash Management Balance Report.</p></li><li><p>Cash Management Session Summary.</p></li></ul><p>Each of these receipts have to be created in the Receipt Maintenance and
+configured in the POS Terminal as well.</p><p>In this section we would walkthrough on how the Cash Management Normal
+Receipt Type can be created and configured.</p><p>Let us first create this new Cash Management Normal Receipt.</p><p>1 -- <strong>Navigate to the Receipt Maintenance</strong> and <strong>click on + New
+Receipt Document</strong>.</p><p>2 -- <strong>Set the appropriate values</strong> for the new Cash Management Normal
+Receipt as follows:</p><p><img loading="lazy" src="/assets/images/image156-c56d1b30005ed11ef05ca93595817e6b.jpg" width="733" height="255" class="img_ev3q"> </p><p>3 -- <strong>Set an appropriate Receipt Name</strong> and <strong>click on Save</strong>.</p><p><img loading="lazy" src="/assets/images/image157-3c48cd6c5be622b9add0d63058525e47.jpg" width="1280" height="576" class="img_ev3q"> </p><p>Now let us configure the POS Terminal to use this Receipt to print the
+Cash Management Normal Receipt.</p><p>4 -- Navigate to the POS Terminal Maintenance using the Search or the
+path:</p><p><img loading="lazy" src="/assets/images/image158-e256eadda6888e8f5055764adbe74ce5.jpg" width="660" height="188" class="img_ev3q"> </p><p>5 -- Click on the <strong>Edit icon of the POS Terminal</strong> that the Customer
+Signature Slip is to be changed. <strong>Go to the tab Printing → Sundry</strong> and
+in the <strong>drop-down for Cash Management Slip</strong>, select <strong>Enactor Cash
+Management Normal Receipt</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image159-4c22c0ad052f08eed5e3c64cdc5152bd.jpeg" width="1463" height="673" class="img_ev3q"> </p><p><strong>Note:</strong> To configure the other 2 cash management receipt types, i.e.,
+<strong>Cash Management Balance Report</strong> and <strong>Cash Management Session
+Summary</strong>, select the appropriate receipts from the dropdowns for the
+fields <strong>Balance Report</strong> and <strong>Session Summary</strong> respectively, in the
+above shown <strong>Printing → Sundry Tab of the POS Terminal</strong>.</p><p><strong>Save and broadcast the following entities</strong> which will successfully
+set up your new Transaction Stored Receipt to be printed in your POS
+Terminal printer:</p><ul><li><p>POS Terminal</p></li><li><p>Page Definition</p></li><li><p>Page Definition Detail</p></li></ul><p>The Cash Management Normal Receipt displays in the POS Terminal as
+follows:</p><p><img loading="lazy" src="/assets/images/image160-6f8aefa9c5cf305779088ba3cb1fcdef.jpg" width="344" height="178" class="img_ev3q"></p><p>In this customisation, we will change the content of the receipt and
+display it in the following order:</p><ul><li><p>Add the company logo to the header of the Cash Management Receipts.</p></li><li><p>Display reasons for all Cash Managements Functions such as terminal
+float and pickup.</p></li></ul><p><strong>Note:</strong> Receipt Preview cannot be used to validate the customisations.
+This is because cash management transactions are not recorded in the
+retail transaction archive and cannot be added as a preview. A broadcast
+needs to be sent to the POS terminal for this receipt and then this
+receipt can be printed on a physical printer in order to validate the
+customisations made.</p><p>Let us get the Company Logo to appear in the Header in each of the 3
+Cash Management Receipts. We will first get the Company Logo to appear
+in the Header of the Cash Management Normal Receipt.</p><p>1 -- In the Receipt Maintenance, <strong>navigate to the Cash Management
+Normal Receipt</strong> which was created and configured to your POS Terminal.</p><p>2 -- <strong>Navigate into the Cash Management Receipt Header Section</strong> and
+then enable the Header Logo as follows:</p><p><img loading="lazy" src="/assets/images/image161-0c2debeba704e5c6c4c1fc1aa7ec6e1a.jpeg" width="1463" height="403" class="img_ev3q"> </p><p>Following is the Receipt after the Header Logo has been enabled:</p><p><img loading="lazy" src="/assets/images/image162-1ee70af78f722f7e5dcfd732b3d95648.jpg" width="345" height="231" class="img_ev3q"></p><p><strong>Note:</strong> To add the Company Logo to the other 2 cash management receipt
+types, i.e., <strong>Cash Management Balance Report</strong> and <strong>Cash Management
+Session Summary</strong>, <strong>navigate into the Cash Management Receipt Header
+Section</strong> of the appropriate receipt and then <strong>enable the Header Logo</strong>
+as shown above in the second point. This would then enable the Company
+Logo for all cash management transactions.</p><p>Now we need to display reasons for all Cash Managements Functions such
+as terminal float and pickup. The current cash management receipt
+configuration shows the reasons only for income and expence transactions
+as shown below:</p><p><img loading="lazy" src="/assets/images/image163-f01e72a4bd4e327f11403f27e19a5790.jpg" width="326" height="253" class="img_ev3q">
+<img loading="lazy" src="/assets/images/image164-c47cda6f86763a00d9142a0f8fb5be41.jpg" width="342" height="239" class="img_ev3q"></p><p>The reasons are not displayed for other cash management functions such
+as float and pickup and we need to configure the receipt to display
+them.</p><p><strong>Note:</strong> Please make sure that you have reasons already configured for
+Terminal Float and Terminal Pickup reason types. Only if these are
+already configured will the below steps display the reasons in the Cash
+Management Receipts.</p><p>3 -- In the Receipt Maintenance, <strong>navigate to the Cash Management
+Normal Receipt</strong> which was created and configured to your POS Terminal.</p><p>4 -- <strong>Navigate into the Cash Management Receipt Header Section</strong> and
+then <strong>click on the visibility expression icon of the</strong> <strong>&quot;Reason&quot;</strong>
+<strong>element</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image165-f79a2234de993427d9c2ec7ec3e73f42.jpeg" width="1430" height="648" class="img_ev3q"> </p><p>5 -- Click on the Edit button of the popup that appears.</p><p>6 -- In the Applicability Expression field on the left panel, you will
+notice the following expression:</p><p>#{(cMTransaction.transactionType == \&#x27;TerminalExpense\&#x27; <!-- -->|<!-- -->|<!-- -->
+cMTransaction.transactionType == \&#x27;TerminalIncome\&#x27;) &amp;&amp;
+notEmpty(cMTransaction.reasonKey.reasonId)}</p><p>You have to remove the expression that checks if the cash management
+transaction type is terminal expense and terminal income, and leave only
+the last part of that expression that checks if a Reason ID exists as
+follows:</p><p><img loading="lazy" src="/assets/images/image166-409bebe81c98ecbf8edd9f8364ffa934.jpeg" width="1463" height="455" class="img_ev3q"> </p><p>Now that we have made all the necessary changes to the Cash Management
+Normal Receipt, click on Save and navigate to the root of the Receipt
+and save all changes to this Receipt.</p><p>After broadcasting, if everything is successful, the Cash Management
+Normal Receipt with customisations will now show in the POS as follows
+for Terminal Float and Terminal Pickup transactions:</p><p><img loading="lazy" src="/assets/images/image167-5aed2a6cba6b52adb92a6c7c8753d900.jpg" width="337" height="232" class="img_ev3q">
+<img loading="lazy" src="/assets/images/image168-bf6739e527cf053180b8710b58628e51.jpg" width="354" height="219" class="img_ev3q"></p><p>The Cash Management Normal Receipt will be displayed in the format as
+required and hence it can be seen that the Receipt has been successfully
+customised and printed on the physical printer.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="warranty-receipts">Warranty Receipts<a href="#warranty-receipts" class="hash-link" aria-label="Direct link to Warranty Receipts" title="Direct link to Warranty Receipts">​</a></h2><p>This section will guide you through on how customisations can be done
+for the receipts that get printed when products with warranty are sold
+in the POS.</p><p>The Warranty Receipt is of a different receipt type and this new receipt
+must be created and configured in the POS Terminal as well.</p><p>Let us first create this new receipt.</p><p>1 -- <strong>Navigate to the Receipt Maintenance</strong> and <strong>click on + New
+Receipt Document</strong>.</p><p>2 -- <strong>Set the appropriate values</strong> for the new Warranty Receipt as
+follows:</p><p><img loading="lazy" src="/assets/images/image169-b8ccb35becdd5adf8f2cfb7353e56682.jpg" width="571" height="231" class="img_ev3q"></p><p>3 -- <strong>Set an appropriate Receipt Name</strong> and <strong>click on Save</strong>.</p><p><img loading="lazy" src="/assets/images/image170-fc08315e2d9c42c89569eb6650da20aa.jpg" width="1222" height="710" class="img_ev3q"> </p><p>Now let us configure the POS Terminal to use this Receipt to print the
+Warranty Receipt.</p><p>4 -- Navigate to the POS Terminal Maintenance using the Search or the
+path:</p><p><img loading="lazy" src="/assets/images/image158-e256eadda6888e8f5055764adbe74ce5.jpg" width="660" height="188" class="img_ev3q"> </p><p>5 -- Click on the <strong>Edit icon of the POS Terminal</strong> that the Warranty
+Receipt is to be changed. <strong>Go to the tab Printing → Sundry</strong> and in the
+<strong>drop-down for Warranty Slip</strong>, select <strong>Enactor Warranty Receipt</strong> as
+follows:</p><p><img loading="lazy" src="/assets/images/image171-8960f65275d0dff75a034a17ed964831.jpeg" width="1463" height="678" class="img_ev3q"> </p><p><strong>Save and broadcast the following entities</strong> which will successfully
+set up your new Transaction Stored Receipt to be printed in your POS
+Terminal printer:</p><ul><li><p>POS Terminal</p></li><li><p>Page Definition</p></li><li><p>Page Definition Detail</p></li></ul><p>The Warranty Receipt displays in the POS Terminal as follows:</p><p><img loading="lazy" src="/assets/images/image172-6a10948e5578435e741121cc4b8c8577.jpg" width="343" height="380" class="img_ev3q"></p><p>In this customisation, we will change the content of the receipt and
+display it in the following order:</p><ul><li><p>The warranty header should be wrapped in between dotted lines.</p></li><li><p>Add &quot;<!-- -->[<!-- -->Quantity<!-- -->]<!-- --> @ <!-- -->[<!-- -->Active Selling Code/Product ID<!-- -->]<!-- -->&quot; after the
+product description line.</p></li></ul><p><strong>Note:</strong> Receipt Preview cannot be used to validate the customisations.
+This is because stored transactions are not recorded in the retail
+transaction archive and cannot be added as a preview. A broadcast needs
+to be sent to the POS terminal for this receipt and then this receipt
+can be printed on a physical printer in order to validate the
+customisations made.</p><p>Let us first get the warranty header to appear inside the dotted lines.</p><p>1 -- In the Receipt Maintenance, <strong>navigate to the Warranty Receipt</strong>
+which was created and configured to your POS Terminal.</p><p>2 -- <strong>Navigate into the</strong> <strong>Warranty Slip Header Section</strong>.</p><p>3 -- <strong>Select the &quot;Seperator&quot; element</strong> <strong>from the drop-down</strong> and
+<strong>click on the + Add button</strong>.</p><p>4 -- <strong>Move the &quot;Seperator&quot; element to the first row</strong>, above the
+&quot;Warranty Slip Header Column&quot; element, which would result as follows:</p><p><img loading="lazy" src="/assets/images/image173-13b342764d369859bf36c3017d4ee660.jpeg" width="1428" height="488" class="img_ev3q"> </p><p>Now let us add the &quot;<!-- -->[<!-- -->Quantity<!-- -->]<!-- --> @ <!-- -->[<!-- -->Active Selling Code/Product ID<!-- -->]<!-- -->&quot;
+after the product description line.</p><p>5 -- <strong>Click on Save and navigate to the root of the Receipt</strong> and now
+<strong>navigate to the Warranty Item Details section</strong>.</p><p>6 -- <strong>Enable the &quot;Warranty Article Column&quot; element</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image174-8efc13cf46c73e2d52bc30d29b8159d3.jpeg" width="1432" height="672" class="img_ev3q"> </p><p>Now that we have made all the necessary changes to the Warranty Receipt,
+click on Save and navigate to the root of the Receipt and save all
+changes to this Receipt.</p><p>After broadcasting, if everything is successful, the Warranty Receipt
+with customisations will now show in the POS as follows for when a
+product with Warranty is sold:</p><p><img loading="lazy" src="/assets/images/image175-bcd2f6324548120335e9cf200db749b8.jpg" width="341" height="411" class="img_ev3q"> </p><p>The Warranty Receipt will be displayed in the format as required and
+hence it can be seen that the Receipt has been successfully customised
+and printed on the physical printer.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="gift-transaction-receipts">Gift Transaction Receipts<a href="#gift-transaction-receipts" class="hash-link" aria-label="Direct link to Gift Transaction Receipts" title="Direct link to Gift Transaction Receipts">​</a></h2><p>This section will guide you through on how customisations can be done
+for the receipts that get printed when a Gift Receipt is selected to be
+printed in the POS.</p><p>The Gift Transaction Receipt is of a different receipt type and this new
+receipt must be created and configured in the POS Terminal as well.</p><p>Let us first create this new receipt.</p><p>1 -- <strong>Navigate to the Receipt Maintenance</strong> and <strong>click on + New
+Receipt Document</strong>.</p><p>2 -- <strong>Set the appropriate values</strong> for the new Gift Transaction Receipt
+as follows:</p><p><img loading="lazy" src="/assets/images/image176-2be7a2c21b960a57198b527a3779f494.jpg" width="580" height="255" class="img_ev3q"> </p><p>3 -- <strong>Set an appropriate Receipt Name</strong> and <strong>click on Save</strong>.</p><p><img loading="lazy" src="/assets/images/image177-7c898413df8b14f2109ac6822988b07e.jpeg" width="1466" height="518" class="img_ev3q"> </p><p>Now let us configure the POS Terminal to use this Receipt to print the
+Gift Transaction Receipt.</p><p>4 -- Navigate to the POS Terminal Maintenance using the Search or the
+path:</p><p><img loading="lazy" src="/assets/images/image158-e256eadda6888e8f5055764adbe74ce5.jpg" width="660" height="188" class="img_ev3q"> </p><p>5 -- Click on the <strong>Edit icon of the POS Terminal</strong> that the Gift
+Transaction Receipt is to be changed. <strong>Go to the tab Printing →
+General</strong> and in the <strong>drop-down for Gift Receipt per Transaction</strong>,
+select <strong>Enactor Gift Transaction Receipt</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image178-5ec543bdfa5c7d77caa5f1367adc175a.jpeg" width="1466" height="662" class="img_ev3q"> </p><p><strong>Save and broadcast the following entities</strong> which will successfully
+set up your new Transaction Stored Receipt to be printed in your POS
+Terminal printer:</p><ul><li><p>POS Terminal</p></li><li><p>Page Definition</p></li><li><p>Page Definition Detail</p></li></ul><p>The Gift Transaction Receipt displays in the POS Terminal as follows:</p><p><img loading="lazy" src="/assets/images/image179-64a996b9fc57eaffa91a46df5de7bf74.jpg" width="344" height="328" class="img_ev3q"> </p><p>You can notice that the price of the product is shown in an encoded
+alphabet value. In this customisation we will hide that value altogether
+and leave the rest of the details in the Gift Transaction Receipt.</p><p><strong>Note:</strong> Receipt Preview cannot be used to validate the customisations.
+This is because stored transactions are not recorded in the retail
+transaction archive and cannot be added as a preview. A broadcast needs
+to be sent to the POS terminal for this receipt and then this receipt
+can be printed on a physical printer in order to validate the
+customisations made.</p><p>1 -- In the Receipt Maintenance for this new Gift Transaction Receipt,
+<strong>navigate to</strong> <strong>Gift Transaction Receipt Body Section <!-- -->&gt;<!-- --> Gift Receipt
+Item List <!-- -->&gt;<!-- --> Gift Receipt Item</strong>.</p><p>2 -- <strong>Disable the \&quot;Item Value&quot; element</strong> as follows:</p><p><img loading="lazy" src="/assets/images/image180-149e2a283af57922f02caa30567f223d.jpeg" width="1462" height="690" class="img_ev3q"> </p><p>Now that we have made all the necessary changes to the Gift Transaction
+Receipt, click on Save and navigate to the root of the Receipt and save
+all changes to this Receipt.</p><p>If everything is successful, the Gift Transaction Receipt with the
+customisations will now show in the POS as follows:</p><p><img loading="lazy" src="/assets/images/image181-fe0f2e93061d53fc37c0d8504142f6d9.jpg" width="346" height="336" class="img_ev3q"></p><p>The Gift Transaction Receipt will be displayed in the format as required
+and hence it can be seen that the Receipt has been successfully
+customised and printed on the physical printer.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="location-based-header--footer-customisations-for-receipts">Location based Header &amp; Footer customisations for Receipts<a href="#location-based-header--footer-customisations-for-receipts" class="hash-link" aria-label="Direct link to Location based Header &amp; Footer customisations for Receipts" title="Direct link to Location based Header &amp; Footer customisations for Receipts">​</a></h2><p>This section will guide you on making customisations to the header and
+footer sections of the receipts based on each location. These
+configurations are done using the Location Maintenance function.</p><p>1 -- <strong>Navigate to the Location Maintenance</strong> using the Search or the
+path:</p><p><img loading="lazy" src="/assets/images/image182-92f3dce3c6f467c0e3675df31ab37338.jpg" width="955" height="255" class="img_ev3q"> </p><p>2 -- Select the <strong>Edit</strong> option on the desired <strong>location</strong> to which the
+receipt configurations are to be made.\
+<img loading="lazy" src="/assets/images/image183-6dc406d8a9410f2e69bad3463e8f049c.jpeg" width="1464" height="614" class="img_ev3q"> </p><p>3 -- <strong>Navigate to the Address tab</strong> of the location. There are 2
+sub-tabs here namely, Address and Contact Details. Enter the Address
+details and Contact Details as shown below:\
+<img loading="lazy" src="/assets/images/image184-fd842ff25b4e74d9812e97aae7b3b15c.jpg" width="1291" height="725" class="img_ev3q">
+<img loading="lazy" src="/assets/images/image185-b9b9f6172b384f1bb954a5780dc71213.jpg" width="1394" height="532" class="img_ev3q">
+\
+The following image shows how each of the fields of the above Address
+tab is displayed in the Receipt:</p><p><img loading="lazy" src="/assets/images/image186-b1b8700ad2ff4287464ae9614b2ce6d8.jpg" width="350" height="608" class="img_ev3q"> </p><p>4 -- <strong>Navigate to the Receipt tab</strong> of the location. This is where the
+Receipt Header Lines, Receipt Footer Lines, Receipt Header Logo and
+Receipt Footer Logo are configured.</p><p><img loading="lazy" src="/assets/images/image187-47008b9c3e3bc118e2a37c50a29937ca.jpg" width="1801" height="823" class="img_ev3q"> The
+following image how each of the above fields of the Receipts tab is
+displayed in the Receipt:</p><p><img loading="lazy" src="/assets/images/image188-cc31b269f0f8e192c68827e9af99237d.jpg" width="355" height="604" class="img_ev3q"> </p><p>The configurations made in the Image Maintenace produce the images
+available for selection in the dropdown for the Receipt Header Logo and
+Receipt Footer Logo.</p><p>5 -- To add an image, navigate to the <strong>Image Maintenance</strong> using the
+Search or the path:</p><p><img loading="lazy" src="/assets/images/image189-9d9678a5eb6d35167cb8ef74a338dfc9.jpg" width="666" height="194" class="img_ev3q"> </p><p>6 -- Select <strong>Upload a New Image</strong> on the Image Maintenance page.</p><p><img loading="lazy" src="/assets/images/image190-8a8c14efdb960ba3d498818313f30cc3.jpeg" width="1463" height="646" class="img_ev3q"> </p><p>7 -- Select the <strong>Category</strong> as <strong>Receipt Logos,</strong> enter an <strong>Image ID</strong>
+for the new Receipt Logo image and click on <strong>Create</strong>.</p><p><img loading="lazy" src="/assets/images/image191-47f8d24764759b985a15182205a00c66.jpg" width="735" height="238" class="img_ev3q"> </p><p>8 -- Enter a suitable <strong>description</strong> for this image and click on the
+<strong>Upload Image</strong> button as shown below:</p><p><img loading="lazy" src="/assets/images/image192-b8bfcaf5acdc3d10c8a41d6eadf81680.jpg" width="1010" height="525" class="img_ev3q"> </p><p><strong>Note:</strong> The following sizes can be maintained,</p><ul><li><p>Normal logo: 300 x 58 pixels</p></li><li><p>Small logo: 150 x 29 pixels</p></li></ul><p>Make sure to maintain a ratio of 5:1 when uploading any new image.</p><p>Please find the normal and small logo size samples below:</p><p><img loading="lazy" src="data:image/png;base64,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" width="300" height="58" class="img_ev3q"> </p><p><img loading="lazy" src="data:image/png;base64,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" width="150" height="29" class="img_ev3q"> </p><p>9 -- Click on <strong>Choose File</strong> to select the desired image to upload.
+Once selected, click on the <strong>Upload button</strong> as shown below:</p><p><img loading="lazy" src="/assets/images/image195-c5004a896808f625c919c4ad65c76169.jpg" width="1075" height="477" class="img_ev3q"> </p><p>A successfully uploaded image will be displayed as shown below:\
+<img loading="lazy" src="/assets/images/image196-8822cb17238d850abcf3311d7f4c2a0f.jpg" width="1140" height="636" class="img_ev3q"> </p><p>10 -- Select <strong>Save</strong></p><p>Navigate back to the Location Maintenance and you will now be able to
+select the newly uploaded image from the Receipt Header Logo and Receipt
+Footer Logo dropdown menus in the <strong>Location Maintenance- Receipt Tab</strong>
+as shown below:</p><p><img loading="lazy" src="/assets/images/image197-795241589ea6fe5e0dc98dd029aa6002.jpeg" width="1463" height="666" class="img_ev3q"> </p><p>11 -- Select <strong>Save</strong> and <strong>broadcast t</strong>he following entities which
+will successfully set up your new location-based header and footer
+customisations to be printed in your POS Terminal printer:</p><ul><li><p>Location</p></li><li><p>Images</p></li></ul><p>The Standard Receipt with the added customisations will be displayed in
+the POS Terminal as shown below:</p><p><img loading="lazy" src="/assets/images/image198-426f5813229e9f80ace1172308762d51.jpg" width="350" height="565" class="img_ev3q"> </p><p>Notice that the logo of the footer is using the Enactor Small image that
+was uploaded and customised. Hence, all the customisations made appear
+here as desired and successfully customised and printed on the physical
+printer.</p><h1>Broadcasting</h1><p>To deliver all the configuration changes to the POS, broadcast the
+following entities.</p><ul><li><p>Page Definition</p></li><li><p>Page Definition Detail</p></li><li><p>POS Terminal</p></li><li><p>POS Terminal Template</p></li><li><p>Product</p></li><li><p>Reason</p></li><li><p>Message Resource</p></li><li><p>Location</p></li><li><p>Images</p></li></ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-edit-meta-row row"><div class="col"><a href="https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/04- POS and Store/htg_receipts.md" target="_blank" rel="noreferrer noopener" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_vwxv"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages navigation"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/POS and Store/htg_emp_sale"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Configuring Employee Sales</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/POS and Store/htg_returns"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Configuring Return Reasons</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#accessing-receipt-maintenance" class="table-of-contents__link toc-highlight">Accessing Receipt Maintenance</a></li><li><a href="#create-a-new-receipt" class="table-of-contents__link toc-highlight">Create a new Receipt</a><ul><li><a href="#edit-receipt----receipt-sections" class="table-of-contents__link toc-highlight">Edit Receipt -- Receipt Sections</a></li><li><a href="#edit-receipt----receipt-columns" class="table-of-contents__link toc-highlight">Edit Receipt -- Receipt Columns</a></li></ul></li><li><a href="#receipt-terminology" class="table-of-contents__link toc-highlight">Receipt Terminology</a><ul><li><a href="#understanding-the-navigation-bar" class="table-of-contents__link toc-highlight">Understanding the Navigation Bar</a></li><li><a href="#managing-receipt-columns" class="table-of-contents__link toc-highlight">Managing Receipt Columns</a></li><li><a href="#managing-previews" class="table-of-contents__link toc-highlight">Managing Previews</a></li></ul></li><li><a href="#hiding-the-negative-symbol-from-item-value-discount-in-tender-sales-lines" class="table-of-contents__link toc-highlight">Hiding the negative symbol from item value discount in tender sales lines</a></li><li><a href="#add-content-such-as-date-time-and-thank-you-message-to-the-footer" class="table-of-contents__link toc-highlight">Add content such as date, time and thank you message to the footer</a></li><li><a href="#addition-of-the-active-selling-code-in-the-receipt" class="table-of-contents__link toc-highlight">Addition of the Active Selling Code in the Receipt</a></li><li><a href="#style-colour-size-product-customisations" class="table-of-contents__link toc-highlight">Style Colour Size Product Customisations</a></li><li><a href="#basket-modifiers" class="table-of-contents__link toc-highlight">Basket Modifiers</a><ul><li><a href="#initial-customisation-for-basket-modifiers" class="table-of-contents__link toc-highlight">Initial Customisation for Basket Modifiers</a></li><li><a href="#item-discount-pricing" class="table-of-contents__link toc-highlight">Item Discount Pricing</a></li><li><a href="#transaction-discount-pricing" class="table-of-contents__link toc-highlight">Transaction Discount Pricing</a></li><li><a href="#price-overrides" class="table-of-contents__link toc-highlight">Price Overrides</a></li><li><a href="#promotions" class="table-of-contents__link toc-highlight">Promotions</a></li></ul></li><li><a href="#multiple-basket-items" class="table-of-contents__link toc-highlight">Multiple Basket Items</a><ul><li><a href="#item-quantity-pricing-with-discounts" class="table-of-contents__link toc-highlight">Item Quantity Pricing with Discounts</a></li><li><a href="#measurement-products" class="table-of-contents__link toc-highlight">Measurement Products</a></li></ul></li><li><a href="#voided-transactions" class="table-of-contents__link toc-highlight">Voided Transactions</a></li><li><a href="#duplicate-receipts" class="table-of-contents__link toc-highlight">Duplicate Receipts</a><ul><li><a href="#pre-requisites" class="table-of-contents__link toc-highlight">Pre-requisites</a></li><li><a href="#customisations" class="table-of-contents__link toc-highlight">Customisations</a></li></ul></li><li><a href="#stored-transactions" class="table-of-contents__link toc-highlight">Stored Transactions</a></li><li><a href="#receipt-return" class="table-of-contents__link toc-highlight">Receipt Return</a><ul><li><a href="#standard-receipt-customisation" class="table-of-contents__link toc-highlight">Standard Receipt Customisation</a></li><li><a href="#customer-signature-slip-customisation" class="table-of-contents__link toc-highlight">Customer Signature Slip Customisation</a></li></ul></li><li><a href="#cash-management-receipts" class="table-of-contents__link toc-highlight">Cash Management Receipts</a></li><li><a href="#warranty-receipts" class="table-of-contents__link toc-highlight">Warranty Receipts</a></li><li><a href="#gift-transaction-receipts" class="table-of-contents__link toc-highlight">Gift Transaction Receipts</a></li><li><a href="#location-based-header--footer-customisations-for-receipts" class="table-of-contents__link toc-highlight">Location based Header &amp; Footer customisations for Receipts</a></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">How-To Guides</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://twitter.com/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Twitter<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+<script src="/assets/js/runtime~main.d11f947e.js"></script>
+<script src="/assets/js/main.19ab6258.js"></script>
+</body>
+</html>
